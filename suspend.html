@@ -19,18 +19,27 @@
             <li href="#" class="nav"><a >See Logs</a></li>
         </ul>
     </div>
-    <div class="form-container">
-      <div class = "formBox">
-        <form>
-          <h2>Create A User</h2>
-          <input type="text" name="username" placeholder="Enter Username">
-          <input type="text" name="role" placeholder="Enter Role">
+    <script>
+        var btnContainer = document.getElementById("s-bar");
 
-              <input type="submit" name="" value="Save">
-              <input type="submit" name="" value="Cancel">
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("nav");
 
-        </form>
-      </div>
-    </div>
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+
+    // If there's no active class
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+    // Add the active class to the current/clicked button
+    this.className += " active";
+  });
+}
+
+    </script>
 </body>
 </html>
