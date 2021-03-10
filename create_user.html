@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8" />
+      <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+      <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <title>
+            Now UI Dashboard by Creative Tim
+      </title>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+            name='viewport' />
+      <!--     Fonts and icons     -->
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <!-- CSS Files -->
+      <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="./assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+      <!-- CSS Just for demo purpose, don't include it in your project -->
+      <link href="./assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+      <!-- Start your project here-->
+      <div class="wrapper ">
+            <div class="sidebar" data-color="orange">
+                  <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+                  <div class="logo">
+                        <div class="simple-text logo">
+                              <center>
+                                    <img src="./imgs/img/male_avatar.svg" height="100px" width="100px" />
+                              </center>
+                        </div>
+                        <a class="simple-text logo-normal text-center">
+                              Shyam Tayal
+                              <br>
+                              System Admin
+                        </a>
+                  </div>
+                  <div class="sidebar-wrapper" id="sidebar-wrapper">
+                        <ul class="nav">
+                              <li class="active ">
+                                    <a href="./create_user.html">
+                                          <i class="now-ui-icons ui-1_simple-add"></i>
+                                          <p>Create A User</p>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="./remove_user.html">
+                                          <i class="now-ui-icons ui-1_simple-delete"></i>
+                                          <p>Remove User</p>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="./list_user.html">
+                                          <i class="now-ui-icons design_bullet-list-67"></i>
+                                          <p>List of Users</p>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="./see_logs.html">
+                                          <i class="now-ui-icons education_agenda-bookmark"></i>
+                                          <p>See Logs</p>
+                                    </a>
+                              </li>
+
+                        </ul>
+                  </div>
+            </div>
+
+            <div class="container">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+                        <!-- <center>
+                              <img src="./imgs/img/add_user.svg" height="250px">
+                        </center> -->
+                        <div class="text-center">
+                              <h2>Create a User</h2>
+                              <div class="form-control" style="padding:20px;">
+                                    <form>
+                                          <div class="text-left"><label for="inputUsername">Username</label></div>
+                                          <input type="name" class="form-control" id="inputUsername"
+                                                placeholder="Enter Username">
+                                    </form>
+                                    <br>
+                                    <form>
+                                          <div class="text-left"><label for="inputRole">Role</label><br></div>
+                                          <input type="radio" data-color="orange" id="adminRole" name="role"
+                                                value="System Admin">
+                                          <label for="adminRole">System Admin</label>
+                                          <input type="radio" data-color="orange" id="prevRole" name="role"
+                                                value="Previledged User">
+                                          <label for="prevRole">Previleged User</label>
+                                          <input type="radio" data-color="orange" id="operatRole" name="role"
+                                                value="Operating User">
+                                          <label for="operatRole">Operating User</label>
+                                    </form>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <!-- End your project here-->
+</body>
+
+</html>
