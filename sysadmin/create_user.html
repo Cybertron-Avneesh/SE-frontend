@@ -81,51 +81,29 @@
                               <h2>Create a User</h2>
                               <div class="form-control" style="padding:20px;">
                                     <form>
-                                          <div class="text-left"><label for="inputUsername">Username</label></div>
-                                          <input type="name" class="form-control" id="inputUsername"
-                                                placeholder="Enter Username">
+                                          <div class="text-left"><label for="inputUsername">User ID</label></div>
+                                          <input type="name" class="form-control" id="inputUsername" placeholder="Enter User ID" required>
                               
                                     <br>
                                     
                                           <div class="text-left"><label for="inputRole">Role</label><br></div>
                                           <input type="radio" data-color="orange" id="adminRole" name="role"
-                                                value="System Admin">
+                                                value="System Admin" >
                                           <label for="adminRole">System Admin</label>
                                           <input type="radio" data-color="orange" id="prevRole" name="role"
                                                 value="Previledged User">
                                           <label for="prevRole">Previleged User</label>
                                           <input type="radio" data-color="orange" id="operatRole" name="role"
-                                                value="Operating User">
+                                                value="Operating User" checked="checked">
                                           <label for="operatRole">Operating User</label>
                                     </form>
                                     <button onClick="addUsers()" type="submit" class="btn btn-primary">Submit</button>
                               
-                                    <script >
-                                          let users = [];
-                                          function addUsers(){
-                                                let user = {
-                                                      id : Date.now(),
-                                                      username : document.getElementById('inputUsername').value,
-                                                      role : roleReturningFun(document.querySelectorAll('input[name="role"]'))
-                                                }
-
-                                                users.push(user);
-                                                document.forms[0].reset();
-
-                                                console.log('added', {users});
-                                          }
-                                          function roleReturningFun(radioEle){
-                                                for(let i=0;i<radioEle.length;++i){
-                                                      if(radioEle[i].checked){
-                                                            return radioEle[i].value;
-                                                      }
-                                                }
-                                          }
-                                          </script> 
                               </div>
                         </div>
                   </div>
             </div>
+            <script type="text/javascript" src="../script/sysadmin.create_user.js"></script> 
             
             
 </body>
