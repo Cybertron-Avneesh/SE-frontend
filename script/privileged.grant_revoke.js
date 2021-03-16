@@ -20,6 +20,27 @@ function getAccessStatus(status) {
         return 'No Access';
     }
 }
+async function grant_Revoke(userId, accessStatus){
+    reqBody = {
+        my_id: 'iib2019050',
+        has_access: accessStatus,
+        my_level: 1,
+        user_id: userId
+    };
+
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reqBody)
+    }
+
+    let response = await fetch(baseUrl, options);
+    let data = await response.json();
+    console.log(data);
+
+}
 async function listOfOperatingUser() {
     let response = await fetch(baseUrl);
     let data = await response.json();
@@ -39,7 +60,7 @@ async function listOfOperatingUser() {
                                                     ${cnt}
                                                 </td>
                                                 <td>
-                                                    ${element["name"].toCapital()}
+                                                    ${element["name"]}
                                                 </td>
                                                 <td>
                                                     ${element["user_id"]}
@@ -51,8 +72,8 @@ async function listOfOperatingUser() {
                                                     ${getAccessStatus(element["has_access"])}
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-success" id="${element["user_id"]}_grant">Grant</button>
-                                                    <button class="btn btn-sm btn-danger"  id="${element["user_id"]}_revoke">Revoke</button>
+                                                    <button class="btn btn-sm btn-success" onclick="${grant_Revoke(element['user_id'], 1)}">Grant</button>
+                                                    <button class="btn btn-sm btn-danger" onclick="${grant_Revoke(element['user_id'], 0)}">Revoke</button>
                                                 </td>
                                             </tr>`)
     });
