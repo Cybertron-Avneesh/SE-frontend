@@ -22,7 +22,7 @@
       <link href="./../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="listOfUser()">
       <!-- Start your project here-->
       <div class="wrapper ">
             <div class="sidebar" data-color="orange">
@@ -98,8 +98,8 @@
                                                                         Role
                                                                   </th>
                                                             </thead>
-                                                            <tbody>
-                                                                  <tr>
+                                                            <tbody id="listUser">
+                                                                  <!-- <tr>
                                                                         <td>
                                                                               1
                                                                         </td>
@@ -138,7 +138,8 @@
                                                                               IIB2019052
                                                                         </td>
                                                                         <td>
-                                                                              Operating User
+                                                                              <span class=" alert-success" style="padding: 6px; border-radius: 20px;">Operating User</span>
+                                                                              
                                                                         </td>
                                                                   </tr>
                                                                   <tr>
@@ -168,7 +169,7 @@
                                                                         <td>
                                                                               System Admin
                                                                         </td>
-                                                                  </tr>
+                                                                  </tr> -->
                                                             </tbody>
                                                       </table>
                                                 </div>
@@ -178,6 +179,7 @@
                         </div>
                   </div>
             </div>
+            <script src="../script/sysadmin.list_user.js"></script>
 </body>
 
 </html>
