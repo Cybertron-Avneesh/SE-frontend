@@ -27,6 +27,7 @@ async function grant_Revoke(userId, accessStatus){
         my_level: 1,
         user_id: userId
     };
+    console.log(reqBody)
 
     var options = {
         method: 'POST',
