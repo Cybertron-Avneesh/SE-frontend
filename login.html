@@ -21,23 +21,32 @@
     <link href="./assets/demo/demo.css" rel="stylesheet" />
 </head>
   <body>
-      <div class="container">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-            <div class="text-center">
-            <h2>Sign In</h2>
-            <div class="form-control" style="padding:20px;">
-              <form>
-                <div class="text-left"><label for="inputUsername">User ID</label></div>
-                  <input type="name" class="form-control" id="inputUsername" placeholder="Enter User ID" required>
-                  <br>
-                 <div class="text-left"><label for="inputPass">Password</label></div>
-                  <input type="name" class="form-control" id="inputPass" placeholder="Enter Password" required>
-              </form>
-              <button onClick="" type="submit" class="btn btn-primary">Login</button>
-              </div>
-            </div>
+      <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+          <div class="text-center">
+          <h2>Sign In</h2>
+          <div class="form-control" style="padding:20px;">
+            <form>
+              <div class="text-left"><label for="inputUsername">User ID</label></div>
+                <input type="name" class="form-control" id="inputUsername" placeholder="Enter User ID" required>
+                <br>
+                <div class="text-left"><label for="inputPass">Password</label></div>
+                <input type="name" class="form-control" id="inputPass" placeholder="Enter Password" required>
+                <br>       
+              <div class="text-left"><label for="inputRole">Role</label><br></div>
+              <input type="radio" data-color="orange" id="adminRole" name="role"
+                    value="System Admin" >
+              <label for="adminRole">System Admin</label>
+              <input type="radio" data-color="orange" id="prevRole" name="role"
+                    value="Previledged User">
+              <label for="prevRole">Previleged User</label>
+              <input type="radio" data-color="orange" id="operatRole" name="role"
+                    value="Operating User" checked="checked">
+              <label for="operatRole">Operating User</label>
+            </form>
+            <button onClick="checkCred()" type="submit" class="btn btn-primary">Login</button>
           </div>
         </div>
-
+      </div>
+      <script type="text/javascript" src="./script/login.js"></script> 
   </body>
 </html>
