@@ -24,7 +24,7 @@
     <link href="./../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="listOfOperatingUser()">
     <!-- Start your project here-->
     <div class="wrapper ">
         <div class="sidebar" data-color="orange">
@@ -100,7 +100,7 @@
                                                 Action
                                             </th>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="listOperatingUser">
                                             <tr>
                                                 <td>
                                                     1
@@ -215,6 +215,7 @@
                 </div>
             </div>
         </div>
+        <script src="../script/privileged.grant_revoke.js"></script>
         <!-- End your project here-->
 </body>
 
