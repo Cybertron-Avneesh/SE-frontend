@@ -20,6 +20,9 @@ function checkCred() {
             res.json()
                 .then(data => {
                     console.log(data)
+                    if(res.status===200)
+                    window.location.replace('./sysadmin/index.html')
+
                 })
                 .catch(err => console.log(`${err}`))
         })
@@ -29,7 +32,6 @@ function checkCred() {
     document.forms[0].reset();
 
     console.log('check for ', { users });
-    window.location.replace('./sysadmin/index.html')
 }
 
 function roleReturningFun(radioEle) {
