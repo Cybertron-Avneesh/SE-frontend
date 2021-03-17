@@ -29,7 +29,7 @@ function checkCred() {
     document.forms[0].reset();
 
     console.log('check for ', { users });
-    window.location.replace('../sysadmin/index.html')
+    window.location.replace('./sysadmin/index.html')
 }
 
 function roleReturningFun(radioEle) {
