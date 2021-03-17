@@ -73,7 +73,7 @@ async function listOfOperatingUser() {
                                                     ${getAccessStatus(element["has_access"])}
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-success" onclick="${grant_Revoke(element['user_id'], 1)}">Grant</button>
+                                                    <button class="btn btn-sm btn-success" onclick="grant_Revoke('iib2019052', 1)">Grant</button>
                                                     <button class="btn btn-sm btn-danger" onclick="${grant_Revoke(element['user_id'], 0)}">Revoke</button>
                                                 </td>
                                             </tr>`)
