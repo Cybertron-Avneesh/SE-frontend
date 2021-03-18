@@ -22,7 +22,7 @@
     <link href="./../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="getLogs()">
     <!-- Start your project here-->
     <div class="wrapper ">
         <div class="sidebar" data-color="orange">
@@ -99,8 +99,8 @@
                                             </th>
 
                                         </thead>
-                                        <tbody>
-                                            <tr>
+                                        <tbody id="logsTable">
+                                            <!-- <tr>
                                                 <td>
                                                     1
                                                 </td>
@@ -174,7 +174,7 @@
                                                 <td>
                                                     Removed Operating User IIB2019065
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -184,6 +184,7 @@
                 </div>
             </div>
         </div>
+        <script src="../script/sysadmin.getLogs.js"></script>
 </body>
 
 </html>
