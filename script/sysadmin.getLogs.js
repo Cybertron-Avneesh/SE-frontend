@@ -12,6 +12,7 @@ async function getLogs(){
     table = document.getElementById('logsTable');
     cnt = 0;
     finalList.reverse();
+    finalList = finalList.slice(0, 10);
     finalList.forEach(element => {
         cnt++;
         // roleTag = getRoleTag(element["admin_level"]);
