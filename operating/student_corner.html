@@ -109,9 +109,9 @@
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#sendnotif">
+                    <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#duesdetails">
                       <i class="fa fa-bell"></i>
-                      <span class="d-md-block">Send Notification</span>
+                      <span class="d-md-block">Due Details</span>
                     </button>
                 </li>
 
@@ -164,7 +164,7 @@
                     <p>Some text in the modal.</p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-dangerr" data-dismiss="modal">Close</button>
                   </div>
                 </div>
 
@@ -180,29 +180,100 @@
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                      <p>Some text in the modal.</p>
+                        <h3>
+                          <i class="fa fa-user-circle"></i>
+                          IIB2019055
+                        </h3>
+                      <p>This will get Details from the Due Details table and ask for confirmation to send reminder for fee</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
                     </div>
                   </div>
 
                 </div>
               </div>
-              <div class="modal fade" id="sendnotif" role="dialog">
+              <div class="modal fade" id="duesdetails" role="dialog">
                   <div class="modal-dialog modal-lg">
 
                     <!-- Modal content-->
                     <div class="modal-content">
                       <div class="modal-header">
-                       <h4 class="modal-title">Send Notification</h4>
+                       <h4 class="modal-title">Dues Details</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body">
-                        <p>Some text in the modal.</p>
+                        <!-- <p>No Dues as of now .. </p> -->
+                        <h3>
+                          <i class="fa fa-user-circle"></i>
+                          IIB2019055
+                        </h3>
+                        <table class="table">
+                              <thead class=" text-primary">
+
+                                    <!-- name, username, role, sn -->
+                                    <th>
+                                          S.no.
+                                    </th>
+                                    <th>
+                                          Date
+                                    </th>
+                                    <th>
+                                          Due details
+                                    </th>
+                              </thead>
+                              <tbody id="listdues" align="center">
+                                    <tr>
+                                          <td>
+                                                1
+                                          </td>
+                                          <td>
+                                                2021-01-07
+                                          </td>
+                                          <td>
+                                              Semester 4th Fees Not paid
+                                          </td>
+                                    </tr>
+
+                                    <tr>
+                                          <td>
+                                                2
+                                          </td>
+                                          <td>
+                                                2020-07-05
+                                          </td>
+                                          <td>
+                                              Semester 3rd Fees Not paid
+                                          </td>
+                                    </tr>
+                                    <tr>
+                                          <td>
+                                                3
+                                          </td>
+                                          <td>
+                                                2020-01-03
+                                          </td>
+                                          <td>
+                                              Semester 2nd Fees Not Paid
+                                          </td>
+                                    </tr>
+                                    <tr>
+                                          <td>
+                                                4
+                                          </td>
+                                          <td>
+                                                2019-06-22
+                                          </td>
+                                          <td>
+                                                Semester 1st Fees Not paid
+                                          </td>
+
+                                    </tr>
+                              </tbody>
+                        </table>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
                       </div>
                     </div>
 
