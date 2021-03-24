@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./../assets/img/apple-icon.png">
+    <!-- <link rel="icon" type="image/png" href="./assets/img/favicon.png"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        AMSAAA
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link href="./../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="./../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <div class="simple-text logo">
+                    <center>
+                        <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+                    </center>
+                </div>
+                <a class="simple-text logo-normal text-center">
+                    Avneesh Kumar
+                    <br>
+                    Privileged User
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="./grant_revoke_permission.html">
+                            <i class="fa fa-theater-masks"></i>
+                            <p>Grant/Revoke Permission</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./masters_program.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Programs</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./masters_branches.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Branches</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./masters_semester.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Semester</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./masters_courses.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./update_sem.html">
+                            <i class="fa fa-retweet"></i>
+                            <p>Update Semester</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <center>
+            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
+                <div class=" card-header">
+                    <h3>Masters / Programs</h3>
+                </div>
+                <div class="card-body "
+                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
+                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
+                        <i class=" fa fa-plus"></i>
+                        Create
+                    </button>
+                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green')">
+                        <i class="fa fa-list"></i>
+                        List
+                    </button>
+                    <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
+                        <i class="fa fa-edit"></i>
+                        Update
+                    </button>
+
+                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
+                        <i class=" fa fa-trash"></i>
+                        Delete
+                    </button>
+
+                    <hr>
+
+                    <div id="Create" class="tabcontent">
+                        <div class="form-control" style="padding:20px;">
+                            <form>
+                                <div class="text-left"><label for="createProgramID"> <b>Program ID</b></label></div>
+                                <input type="name" class="form-control" id="createProgramID"
+                                    placeholder="Enter Program ID" required>
+                                <br>
+                                <div class="text-left"><label for="createProgramName"> <b>Program Name</b></label></div>
+                                <input type="name" class="form-control" id="createProgramName"
+                                    placeholder="Enter Program Name" required>
+                            </form>
+                            <button onClick="" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                    <div id="List" class="tabcontent">
+                        <table class="table">
+                            <thead class=" text-primary">
+
+                                <!-- name, username, role, sn -->
+                                <th>
+                                    S.no.
+                                </th>
+                                <th>
+                                    ProgramID
+                                </th>
+                                <th>
+                                    Program Name
+                                </th>
+                            </thead>
+                            <tbody id="listPrograms">
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        BTECH
+                                    </td>
+                                    <td>
+                                        Bachelors of Technology
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        MTECH
+                                    </td>
+                                    <td>
+                                        Masters of Technology
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        MBA
+                                    </td>
+                                    <td>
+                                        Masters of Business Application
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        4
+                                    </td>
+                                    <td>
+                                        PhD
+                                    </td>
+                                    <td>
+                                        Doctor of Philosophy
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="Update" class="tabcontent">
+                        <span class="badge badge-default">
+                            Only Program name can be updated. ID can not be changed. 
+                            <br>
+                            Try deleting program, in case you want to change ID.
+                        </span>
+                        <br>
+                        <div class="form-control" style="padding:20px;">
+
+                            <form>
+                                <div class="text-left"><label for="upProgramID"> <b>Program ID</b></label></div>
+                                <input type="name" class="form-control" id="upProgramID" placeholder="Enter Program ID"
+                                    required>
+                                <br>
+                                <div class="text-left"><label for="upProgramName"> <b>Program Name</b></label></div>
+                                <input type="name" class="form-control" id="upProgramName"
+                                    placeholder="Enter Program Name" required>
+                            </form>
+                            <button onClick="" type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </div>
+
+                    <div id="Delete" class="tabcontent">
+                        <div class="form-control" style="padding:20px;">
+                            <form>
+                                <div class="text-left"><label for="delProgramID"> <b>Program ID</b></label></div>
+                                <input type="name" class="form-control" id="delProgramID" placeholder="Enter Program ID"
+                                    required>
+                            </form>
+                            <button onClick="" type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </center>
+
+
+
+
+        <script>
+            function openPage(pageName, elmnt, color) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                }
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = color;
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+
+</body>
+
+</html>
