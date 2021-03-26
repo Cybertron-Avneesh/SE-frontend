@@ -1,4 +1,5 @@
 let users = [];
+
 function addUsers() {
 
     // For connecting Backend
@@ -36,6 +37,7 @@ function addUsers() {
 
     // console.log('added', { users });
 }
+
 function roleReturningFun(radioEle) {
     for (let i = 0; i < radioEle.length; ++i) {
         if (radioEle[i].checked) {
