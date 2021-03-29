@@ -97,7 +97,7 @@
                         <i class=" fa fa-plus"></i>
                         Create
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green')">
+                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
                         <i class="fa fa-list"></i>
                         List
                     </button>
@@ -124,7 +124,7 @@
                                 <input type="name" class="form-control" id="createProgramName"
                                     placeholder="Enter Program Name" required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Submit</button>
+                            <button onClick="addProgram()" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
 
@@ -144,7 +144,7 @@
                                 </th>
                             </thead>
                             <tbody id="listPrograms">
-                                <tr>
+                                <!-- <tr>
                                     <td>
                                         1
                                     </td>
@@ -187,7 +187,7 @@
                                     <td>
                                         Doctor of Philosophy
                                     </td>
-                                </tr>
+                                </tr> -->
 
                             </tbody>
                         </table>
@@ -211,7 +211,7 @@
                                 <input type="name" class="form-control" id="upProgramName"
                                     placeholder="Enter Program Name" required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Update</button>
+                            <button onClick="updateProgram()" type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
 
@@ -222,7 +222,7 @@
                                 <input type="name" class="form-control" id="delProgramID" placeholder="Enter Program ID"
                                     required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-danger">Delete</button>
+                            <button onClick="deleteProgram()" type="submit" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
 
@@ -252,6 +252,7 @@
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
         </script>
+        <script src="../script/priviledged.masters_programs.js"></script>
 
 </body>
 

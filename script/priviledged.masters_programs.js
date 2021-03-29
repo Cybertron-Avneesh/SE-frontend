@@ -1,66 +1,146 @@
-let masters = [];
-
-function addMaster() {
-
-    var master = {
-        prog_ID: document.getElementById('createProgramID'),
-        prog_name: document.getElementById('createProgramName')
-    }
-
-    masters.push(master);
-    document.forms[0].reset();
-
-}
-function updateMaster() {
-
-    var master = {
-        prog_ID: document.getElementById('upProgramID'),
-        prog_name: document.getElementById('upProgramName')
-    }
-
-    masters.push(master);
-    document.forms[0].reset();
-
-}
-function deleteMaster() {
-
-    var master = {
-        prog_ID: document.getElementById('upProgramID')
-    }
-
-    masters.push(master);
-    document.forms[0].reset();
-
-}
-
 let baseUrl = 'http://localhost:5440/masters/program';
 
-async function getList() {
-    let response = await fetch(baseUrl);
-    let data = await response.json();
-    console.log(data);
-    finalList = data['programs'];
-    console.log(finalList);
-    //     data['users'].array.forEach(element => {
+let programs = [];
 
-    //     });
-    table = document.getElementById('listPrograms');
-    cnt = 0;
-    finalList.forEach(element => {
-        cnt++;
-        // roleTag = getRoleTag(element["admin_level"]);
-        table.insertAdjacentHTML('beforeend', `
+function addProgram() {
+    var program = {
+        program_id: document.getElementById('createProgramID').value,
+        program_name: document.getElementById('createProgramName').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(program)
+    }
+
+    fetch('http://localhost:5440/masters/program?action=1', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Program created sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
+
+    programs.push(program);
+    document.forms[0].reset();
+}
+function updateProgram() {
+
+    var program = {
+        program_id: document.getElementById('upProgramID').value,
+        program_name: document.getElementById('upProgramName').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(program)
+    }
+
+    fetch('http://localhost:5440/masters/program?action=3', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Program updated sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
+
+    programs.push(program);
+    document.forms[1].reset();
+}
+function deleteProgram() {
+
+    var program = {
+        program_id: document.getElementById('delProgramID').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(program)
+    }
+
+    fetch('http://localhost:5440/masters/program?action=4', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Program deleted sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
+
+    programs.push(program);
+    document.forms[2].reset();
+}
+
+async function getList() {
+    var cred = {
+        my_id: "iib2019050",
+        my_level: 2
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cred)
+    }
+    var response;
+    await fetch('http://localhost:5440/masters/program?action=2', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    response = data;
+                    finalList = response['programs'];
+                    console.log(finalList);
+                    table = document.getElementById('listPrograms');
+                    table.innerHTML = "";
+                    cnt = 0;
+                    finalList.forEach(element => {
+                        cnt++;
+                        // roleTag = getRoleTag(element["admin_level"]);
+                        table.insertAdjacentHTML('beforeend', `
                                                 <tr>
                                                 <td>
                                                     ${cnt}
                                                 </td>
                                                 <td>
-                                                    ${element['prog_ID']}
+                                                    ${element['program_id']}
                                                 </td>
                                                 <td>
-                                                    ${element['prog_name']}
+                                                    ${element['program_name']}
                                                 </td>
                                                 </tr>
-        `);
-    });
+                        `);
+                    });
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
+
+    // let data = await response.json();
+    // console.log(data);
+
 }
