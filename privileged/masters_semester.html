@@ -98,14 +98,14 @@
                         <i class=" fa fa-plus"></i>
                         Create
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green')">
+                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
                         <i class="fa fa-list"></i>
                         List
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
+                    <!-- <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
                         <i class="fa fa-edit"></i>
                         Update
-                    </button>
+                    </button> -->
 
                     <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
                         <i class=" fa fa-trash"></i>
@@ -116,6 +116,7 @@
 
                     <div id="Create" class="tabcontent">
                         <div class="form-control" style="padding:20px;">
+                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
                             <form>
                                 <div class="text-left"><label for="createSemID"> <b>Sem ID</b></label></div>
                                 <input type="name" class="form-control" id="createSemID"
@@ -129,7 +130,7 @@
                                 <input type="name" class="form-control" id="createBranchID"
                                     placeholder="Linked Branch ID" required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Submit</button>
+                            <button onClick="addSemester()" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
 
@@ -212,7 +213,7 @@
                         </table>
                     </div>
 
-                    <div id="Update" class="tabcontent">
+                    <!-- <div id="Update" class="tabcontent">
                         <span class="badge badge-default">
                         </span>
                         <br>
@@ -233,21 +234,22 @@
                             </form>
                             <button onClick="" type="submit" class="btn btn-primary">Update</button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div id="Delete" class="tabcontent">
                         <div class="form-control" style="padding:20px;">
+                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
                             <form>
                                 <div class="text-left"><label for="delSemID"> <b>Sem ID</b></label></div>
                                 <input type="name" class="form-control" id="delSemID"
                                     placeholder="Enter Sem ID" required>
-                                <br>
-                                <div class="text-left"><label for="delBranchID"> <b>Linked Branch ID</b></label></div>
+                                <!-- <br> -->
+                                <!-- <div class="text-left"><label for="delBranchID"> <b>Linked Branch ID</b></label></div>
                                 <input type="name" class="form-control" id="delBranchID"
-                                    placeholder="Linked Branch ID" required>
+                                    placeholder="Linked Branch ID" required> -->
                                 <br>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-danger">Delete</button>
+                            <button onClick="deleteSemester()" type="submit" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
 
@@ -277,6 +279,7 @@
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
         </script>
+        <script src="../script/priviledged.masters_semester.js"></script>
 
 </body>
 
