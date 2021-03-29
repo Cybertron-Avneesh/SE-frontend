@@ -1,10 +1,31 @@
 let masters = [];
 
-function addMasters() {
+function addMaster() {
 
     var master = {
         prog_ID: document.getElementById('createProgramID'),
         prog_name: document.getElementById('createProgramName')
+    }
+
+    masters.push(master);
+    document.forms[0].reset();
+
+}
+function updateMaster() {
+
+    var master = {
+        prog_ID: document.getElementById('upProgramID'),
+        prog_name: document.getElementById('upProgramName')
+    }
+
+    masters.push(master);
+    document.forms[0].reset();
+
+}
+function deleteMaster() {
+
+    var master = {
+        prog_ID: document.getElementById('upProgramID')
     }
 
     masters.push(master);
@@ -23,10 +44,8 @@ async function getList() {
     //     data['users'].array.forEach(element => {
 
     //     });
-    table = document.getElementById('List');
+    table = document.getElementById('listPrograms');
     cnt = 0;
-    finalList.reverse();
-    finalList = finalList.slice(0, 10);
     finalList.forEach(element => {
         cnt++;
         // roleTag = getRoleTag(element["admin_level"]);
