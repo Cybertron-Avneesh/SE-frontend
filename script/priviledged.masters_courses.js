@@ -3,12 +3,34 @@ let courses = [];
 function addCourse() {
 
     var course = {
-        branch_ID: document.getElementById('createBranchID'),
-        sem_ID: document.getElementById('createSemID'),
-        course_ID: document.getElementById('createCourseID'),
-        course_name: document.getElementById('createCourseName'),
-        course_credit: document.getElementById('createCourseCredit')
+        branch_id: document.getElementById('createBranchID').value,
+        semester_id: document.getElementById('createSemID').value,
+        course_id: document.getElementById('createCourseID').value,
+        course_name: document.getElementById('createCourseName').value,
+        credits: document.getElementById('createCourseCredit').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
     }
+    
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(course)
+    }
+
+    fetch('http://localhost:5440/masters/course?action=1', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Course created sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 
     courses.push(course);
     document.forms[0].reset();
@@ -17,12 +39,33 @@ function addCourse() {
 function updateCourse() {
 
     var course = {
-        branch_ID: document.getElementById('upBranchID'),
-        sem_ID: document.getElementById('upSemID'),
-        course_ID: document.getElementById('upCourseID'),
-        course_name: document.getElementById('upCourseName'),
-        course_credit: document.getElementById('upCourseCredit')
+        semester_id: document.getElementById('upSemID').value,
+        course_id: document.getElementById('upCourseID').value,
+        course_name: document.getElementById('upCourseName').value,
+        credits: document.getElementById('upCourseCredit').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
     }
+    
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(course)
+    }
+
+    fetch('http://localhost:5440/masters/course?action=3', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Course updated sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 
     courses.push(course);
     document.forms[0].reset();
@@ -31,10 +74,31 @@ function updateCourse() {
 function deleteCourse() {
 
     var course = {
-        branch_ID: document.getElementById('delBranchID'),
-        sem_ID: document.getElementById('delSemID'),
-        course_ID: document.getElementById('delCourseID')
+        semester_id: document.getElementById('upSemID').value,
+        course_id: document.getElementById('upCourseID').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
     }
+    
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(course)
+    }
+
+    fetch('http://localhost:5440/masters/course?action=4', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Course deleted sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 
     courses.push(course);
     document.forms[0].reset();
@@ -43,42 +107,58 @@ function deleteCourse() {
 let baseUrl = 'http://localhost:5440/masters/program';
 
 async function getList() {
-    let response = await fetch(baseUrl);
-    let data = await response.json();
-    console.log(data);
-    finalList = data['courses'];
-    console.log(finalList);
-    //     data['users'].array.forEach(element => {
 
-    //     });
-    table = document.getElementById('listCourses');
-    cnt = 0;
-    finalList.forEach(element => {
-        cnt++;
-        // roleTag = getRoleTag(element["admin_level"]);
-        table.insertAdjacentHTML('beforeend', `
-        <tr>
+    var cred = {
+        my_id: "iib2019050",
+        my_level: 2
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cred)
+    }
+    var response;
+    await fetch('http://localhost:5440/masters/course?action=2', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    response = data;
+                    finalList = response['courses'];
+                    console.log(finalList);
+                    table = document.getElementById('listCourses');
+                    table.innerHTML = "";
+                    cnt = 0;
+                    finalList.forEach(element => {
+                        cnt++;
+                        table.insertAdjacentHTML('beforeend', `
+                        <tr>
                                     <td>
                                         ${cnt}
                                     </td>
                                     <td>
-                                        ${element['sem_ID']}
+                                        ${element['semester_id']}
                                     </td>
                                     <td>
-                                        ${element['branch_ID']}
+                                        ${element['branch_id']}
                                     </td>
                                     <td>
-                                        ${element['course_ID']}
+                                        ${element['course_id']}
                                     </td>
                                     <td>
-                                        ${element['course_credit']}
+                                        ${element['credits']}
                                     </td>
                                     <td>
                                         ${element['course_name']}
                                     </td>
-        </tr>
-                                
-        `);
-    });
+                        </tr>
+                        `);
+                    });
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 }
 

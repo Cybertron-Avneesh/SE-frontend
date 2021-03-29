@@ -98,7 +98,7 @@
                         <i class=" fa fa-plus"></i>
                         Create
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green')">
+                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
                         <i class="fa fa-list"></i>
                         List
                     </button>
@@ -116,6 +116,7 @@
 
                     <div id="Create" class="tabcontent">
                         <div class="form-control" style="padding:20px;">
+                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
                             <form>
                                 <div class="text-left"><label for="createSemID"> <b>Sem ID</b></label></div>
                                 <input type="name" class="form-control" id="createSemID" placeholder="Enter Semester ID"
@@ -138,7 +139,7 @@
                                 <input type="number" class="form-control" id="createCourseCredit"
                                     placeholder="Enter Course Credits" required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Submit</button>
+                            <button onClick="addCourse()" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
 
@@ -276,15 +277,15 @@
                         </span>
                         <br>
                         <div class="form-control" style="padding:20px;">
-
+                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
                             <form>
                                 <div class="text-left"><label for="upSemID"> <b>Sem ID</b></label></div>
                                 <input type="name" class="form-control" id="upSemID" placeholder="Enter Semester ID"
                                     required>
-                                <br>
+                                <!-- <br>
                                 <div class="text-left"><label for="upBranchID"> <b>Branch ID</b></label></div>
                                 <input type="name" class="form-control" id="upBranchID"
-                                    placeholder="Enter Branch ID" required>
+                                    placeholder="Enter Branch ID" required> -->
                                 <br>
                                 <div class="text-left"><label for="upCourseID"> <b>Course ID</b></label></div>
                                 <input type="name" class="form-control" id="upCourseID"
@@ -298,27 +299,28 @@
                                 <input type="number" class="form-control" id="upCourseCredit"
                                     placeholder="Enter Course Credits" required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Update</button>
+                            <button onClick="updateCourse()" type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
 
                     <div id="Delete" class="tabcontent">
                         <div class="form-control" style="padding:20px;">
+                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
                             <form>
                                 <div class="text-left"><label for="delSemID"> <b>Sem ID</b></label></div>
                                 <input type="name" class="form-control" id="delSemID" placeholder="Enter Semester ID"
                                     required>
                                 <br>
-                                <div class="text-left"><label for="delBranchID"> <b>Branch ID</b></label></div>
+                                <!-- <div class="text-left"><label for="delBranchID"> <b>Branch ID</b></label></div>
                                 <input type="name" class="form-control" id="delBranchID"
-                                    placeholder="Enter Branch ID" required>
+                                    placeholder="Enter Branch ID" required> -->
                                 <br>
                                 <div class="text-left"><label for="delCourseID"> <b>Course ID</b></label></div>
                                 <input type="name" class="form-control" id="delCourseID"
                                     placeholder="Enter Course ID" required>
                                 <br>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-danger">Delete</button>
+                            <button onClick="deleteCourse()" type="submit" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
 
@@ -348,6 +350,7 @@
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
         </script>
+        <script src="../script/priviledged.masters_courses.js"></script>
 
 </body>
 
