@@ -1,13 +1,34 @@
 let branches = [];
 
 function addBranch() {
-
     var branch = {
-        branch_ID: document.getElementById('createBranchID'),
-        branch_name: document.getElementById('createBranchName'),
-        prog_ID: document.getElementById('createProgramID')
+        branch_id: document.getElementById('createBranchID').value,
+        branch_name: document.getElementById('createBranchName').value,
+        program_id: document.getElementById('createProgramID').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
+    }
+    
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(branch)
     }
 
+    fetch('http://localhost:5440/masters/branch?action=1', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Branch created sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
+    
     branches.push(branch);
     document.forms[0].reset();
 }
@@ -15,10 +36,32 @@ function addBranch() {
 function updateBranch() {
 
     var branch = {
-        branch_ID: document.getElementById('upBranchID'),
-        branch_name: document.getElementById('upBranchName'),
-        prog_ID: document.getElementById('upProgramID')
+        branch_id: document.getElementById('upBranchID').value,
+        branch_name: document.getElementById('upBranchName').value,
+        program_id: document.getElementById('upProgramID').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
     }
+    
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(branch)
+    }
+
+    fetch('http://localhost:5440/masters/branch?action=3', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Branch updated sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 
     branches.push(branch);
     document.forms[0].reset();
@@ -27,44 +70,83 @@ function updateBranch() {
 function deleteBranch() {
 
     var branch = {
-        branch_ID: document.getElementById('delBranchID'),
-        prog_ID: document.getElementById('delProgramID')
+        branch_id: document.getElementById('delBranchID').value,
+        program_id: document.getElementById('delProgramID').value,
+        my_id: "IIB2019050",
+        my_level: 2,
+        name: "op3"
     }
+    
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(branch)
+    }
+
+    fetch('http://localhost:5440/masters/branch?action=4', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    window.alert("Branch deleted sucessfully.")
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 
     branches.push(branch);
     document.forms[0].reset();
 }
 
-let baseUrl = 'http://localhost:5440/masters/program';
 
 async function getList() {
-    let response = await fetch(baseUrl);
-    let data = await response.json();
-    console.log(data);
-    finalList = data['branches'];
-    console.log(finalList);
-    //     data['users'].array.forEach(element => {
-
-    //     });
-    table = document.getElementById('listBranches');
-    cnt = 0;
-    finalList.forEach(element => {
-        cnt++;
-        // roleTag = getRoleTag(element["admin_level"]);
-        table.insertAdjacentHTML('beforeend', `
-                                                <tr>
-                                                <td>
-                                                    ${cnt}
-                                                </td>
-                                                <td>
-                                                    ${element['prog_ID']}
-                                                </td>
-                                                <td>
-                                                    ${element['prog_name']}
-                                                </td>
-                                                </tr>
-        `);
-    });
+    var cred = {
+        my_id: "iib2019050",
+        my_level: 2
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cred)
+    }
+    var response;
+    await fetch('http://localhost:5440/masters/branch?action=2', options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    response = data;
+                    finalList = response['branches'];
+                    console.log(finalList);
+                    table = document.getElementById('listBranches');
+                    table.innerHTML = "";
+                    cnt = 0;
+                    finalList.forEach(element => {
+                        cnt++;
+                        table.insertAdjacentHTML('beforeend', `
+                        <tr>
+                            <td>
+                                ${cnt}
+                            </td>
+                            <td>
+                                ${element['branch_id']}
+                            </td>
+                            <td>
+                                ${element['branch_name']}
+                            </td>
+                            <td>
+                                ${element['program_id']}
+                            </td>
+                        </tr>
+                        `);
+                    });
+                })
+                .catch(err => console.log(`${err}`))
+        })
+        .catch(err => console.error(err))
 }
 
-                                

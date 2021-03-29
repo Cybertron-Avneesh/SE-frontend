@@ -98,7 +98,7 @@
                         <i class=" fa fa-plus"></i>
                         Create
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green')">
+                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
                         <i class="fa fa-list"></i>
                         List
                     </button>
@@ -129,7 +129,7 @@
                                 <input type="name" class="form-control" id="createProgramID"
                                     placeholder="Linked Program ID" required>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Submit</button>
+                            <button onClick="addBranch()" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
 
@@ -250,7 +250,7 @@
                                     placeholder="Enter Branch Name" required>
                                 
                             </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Update</button>
+                            <button onClick="updateBranch()" type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
 
@@ -266,7 +266,7 @@
                                     placeholder="Linked Program ID" required>
                                 <br>
                             </form>
-                            <button onClick="" type="submit" class="btn btn-danger">Delete</button>
+                            <button onClick="deleteBranch()" type="submit" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
 
@@ -296,6 +296,7 @@
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
         </script>
+        <script src="../script/priviledged.masters_branches.js"></script>
 
 </body>
 
