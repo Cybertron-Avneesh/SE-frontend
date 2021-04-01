@@ -187,7 +187,7 @@
           <div class="modal-body">
             <h3>
               <i class="fa fa-user-circle"></i>
-              IIB2019055
+              <span class="currEnrollID"></span>
             </h3>
             <p>This will get Details from the Due Details table and ask for confirmation to send reminder for fee</p>
           </div>
@@ -211,7 +211,7 @@
             <!-- <p>No Dues as of now .. </p> -->
             <h3>
               <i class="fa fa-user-circle"></i>
-              IIB2019055
+              <span class="currEnrollID"></span>
             </h3>
 
             <table class="table">
@@ -297,7 +297,7 @@
           <div class="modal-body">
             <h3>
               <i class="fa fa-user-circle"></i>
-              IIB2019055
+              <span class="currEnrollID"></span>
             </h3>
             <div>
               <input type="file" value="" class="form-control btn-primary" style="margin:10px;" placeholder="Upload">
@@ -324,16 +324,16 @@
           <div class="modal-body">
             <h3>
               <i class="fa fa-user-circle"></i>
-              IIB2019055
+              <span class="currEnrollID"></span>
             </h3>
-            <input type="text" value="" class="form-control text-info" style="margin:10px;" placeholder="Action Taken">
-            <input type="date" value="" class="form-control text-info" style="margin:10px;"
+            <input id="inputAction" type="text" value="" class="form-control text-info" style="margin:10px;" placeholder="Action Taken">
+            <input id="inputDate" type="date" value="" class="form-control text-info" style="margin:10px;"
               placeholder="Date of Action">
-            <textarea class="form-control" rows="3" style="margin:10px;"
+            <textarea id="inputReason" class="form-control" rows="3" style="margin:10px;"
               placeholder="Description/ reason for which action was taken"></textarea>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Submit</button>
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" onclick="takeDisciplinaryAction()">Submit</button>
             <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
           </div>
         </div>

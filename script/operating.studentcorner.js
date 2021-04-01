@@ -29,6 +29,7 @@ async function searchStudent() {
                     if (response.length === 0) {
                         card.innerHTML = "<h2>No record found.</h2>";
                     } else {
+
                         card.innerHTML = `
                         <div class="card-header">
                             <h3 class="card-title" id="currEnrollID">
@@ -50,6 +51,9 @@ async function searchStudent() {
                             <p><strong>Address : </strong>${response['address']}</p>
                         </div>
                         `;
+                        var elms = document.querySelectorAll("[class='currEnrollID']");
+                        for (var i = 0; i < elms.length; i++)
+                            elms[i].innerHTML = response['enrollment_id'];
                     }
                 })
                 .catch(err => {
@@ -59,10 +63,10 @@ async function searchStudent() {
                 })
         })
         .catch(err => console.error(err))
-        console.log("Avneesh ", currStudentDetail);
+    // console.log("Avneesh ", currStudentDetail);
 }
 
-async function markAsVerfied(){
+async function markAsVerfied() {
     var enrollNo = document.getElementById('currEnrollID').value;
     var cred = {
         my_id: "iib2019050",
@@ -117,14 +121,21 @@ async function markAsVerfied(){
                 })
         })
         .catch(err => console.error(err))
-        console.log("Avneesh ", currStudentDetail);
+    console.log("Avneesh ", currStudentDetail);
 }
 
-async function takeDisciplinaryAction(){
-    var enrollNo = document.getElementById('currEnrollID').value;
+async function takeDisciplinaryAction() {
+    var enrollNo = document.getElementsByClassName('currEnrollID')[0].innerHTML;
+    console.log(enrollNo);
+    var reason = document.getElementById('inputReason').value;
+    var action = document.getElementById('inputAction').value;
+    var date = document.getElementById('inputDate').value;
     var cred = {
         my_id: "iib2019050",
-        my_level: 2
+        my_level: 2,
+        enrollment_id: enrollNo,
+        reason: reason,
+        action: action
     }
     var options = {
         method: 'POST',
@@ -134,20 +145,15 @@ async function takeDisciplinaryAction(){
         body: JSON.stringify(cred)
     }
     var response;
-    await fetch(`http://localhost:5440/student/create/${enrollNo}?action=2`, options)
+    await fetch(`http://localhost:5440/student/disciplinary?action=1`, options)
         .then(res => {
             res.json()
                 .then(data => {
                     console.log(data);
-                    response = data['student'][0];
-                    // student = response;
                 })
                 .catch(err => {
                     console.log(`${err}`);
-                    card = document.getElementById('detailCard');
-                    card.innerHTML = "<h2>Something went fuzzy.</h2>";
                 })
         })
         .catch(err => console.error(err))
-        console.log("Avneesh ", currStudentDetail);   
 }
