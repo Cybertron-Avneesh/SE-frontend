@@ -29,7 +29,10 @@
             <div class="logo">
                 <div class="simple-text logo">
                     <center>
+                      <a href="../operating/index.html">
                         <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+                      </a>
+                        
                     </center>
                 </div>
                 <a class="simple-text logo-normal text-center">
@@ -87,10 +90,12 @@
             <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
               <form>
                 <div class="input-group no-border">
-                  <input type="text" value="" class="form-control text-info" style="width:300px;" placeholder="Search... Enrollment Number">
+                  <input type="text" value="" id="inputEnroll" class="form-control text-info" style="width:300px;" placeholder="Search... Enrollment Number">
                   <div class="input-group-append">
                     <div class="input-group-text">
-                      <i class="fa fa-search"></i>
+                        <button class="btn btn-sm btn-rounded btn-icon" onclick="searchStudent()">
+                          <i class="fa fa-search" style="color: aliceblue;"></i>
+                        </button>
                     </div>
                   </div>
                 </div>
@@ -364,6 +369,7 @@
                           </div>
                           </div>
     </div>
+        <script src="../script/operating.studentcorner.js"></script>
 
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
