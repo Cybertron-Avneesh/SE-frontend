@@ -20,6 +20,11 @@
     <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./../assets/demo/demo.css" rel="stylesheet" />
+    <!-- <style>
+        .badge{
+            top: -24px !important;
+        }
+    </style> -->
 </head>
 
 <body>
@@ -29,6 +34,7 @@
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
+
             <div class="logo">
                 <div class="simple-text logo">
                     <center>
@@ -72,13 +78,64 @@
                 </ul>
             </div>
         </div>
-        <div class="container">
+        <nav class="navbar navbar-expand-lg bg-primary navbar-absolute bg-white">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href=""><i class="fa fa-bars"></i></a>
+                </div>
+              <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
+                <button type="button" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#notification">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </button>
+                <span class="badge badge-pill badge-primary">4</span>&nbsp;&nbsp;
+                </div>
+            </div>
+        </nav>
+        <div id="notification" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <h4 class="modal-title">Notifications</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                  <ul>
+                      <li> Notif 1
+                      </li>
+                      <li> Notif 2
+                      </li>
+                      <li> Notif 3
+                      </li>
+                      <li> Notif 4
+                      </li>
+                  </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="content">
             <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
                 <div class="text-center">
                     <img src="./../imgs/img/welcome.svg" height="400px" />
                 </div>
             </div>
+
         </div>
+
+    </div>
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+    <script src="../assets/demo/demo.js"></script>
         <!-- End your project here-->
 </body>
 
