@@ -84,7 +84,7 @@
                         <i class=" fa fa-plus"></i>
                         Fresh
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Lateral', this, 'green'); getList()">
+                    <button class="btn btn-round tablink" onclick="openPage('Lateral', this, 'green');">
                         <i class="fa fa-edit"></i>
                         Lateral
                     </button>
@@ -101,7 +101,7 @@
                                 <div class="col">
                                   <div class="form-group">
                                     <label>Enrollment ID</label>
-                                    <input type="text" class="form-control" placeholder="Enrollment" value="">
+                                    <input id="fEnrollID" type="text" class="form-control" placeholder="Enrollment" value="">
                                   </div>
                               </div>
                             </div>
@@ -109,13 +109,13 @@
                                 <div class="col-md-6 pr-1">
                                   <div class="form-group">
                                     <label>Email ID</label>
-                                    <input type="email" class="form-control" placeholder="Email" value="example@xyz.com">
+                                    <input id="fEmailID" type="email" class="form-control" placeholder="abc@xyz.com" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-6 pl-1">
                                   <div class="form-group">
                                     <label>Full Name</label>
-                                    <input type="text" class="form-control" placeholder="Full Name" value="">
+                                    <input id="fFullName" type="text" class="form-control" placeholder="John Doe" value="">
                                   </div>
                                 </div>
                               </div>
@@ -123,19 +123,19 @@
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Date of Birth</label>
-                                    <input type="date" class="form-control" placeholder="DOB" value="">
+                                    <input id="fDOB" type="date" class="form-control" placeholder="DOB" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-4 px-1">
                                   <div class="form-group">
                                     <label>Age</label>
-                                    <input type="number" class="form-control" placeholder="it is just a number" value="">
+                                    <input id="fAge" type="number" class="form-control" placeholder="Age" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="number" class="form-control" placeholder="the digits" value="">
+                                    <input id="fPhoneNo" type="number" class="form-control" placeholder="+91 12..." value="">
                                   </div>
                                 </div>
                               </div>
@@ -143,7 +143,7 @@
                                   <div class="col">
                                     <div class="form-group">
                                       <label>Address</label>
-                                      <input type="text" class="form-control" placeholder="living life here" value="">
+                                      <input id="fAddress" type="text" class="form-control" placeholder="Full Address" value="">
                                     </div>
                                 </div>
                               </div>
@@ -151,19 +151,19 @@
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Program ID</label>
-                                    <input type="text" class="form-control" placeholder="program id" value="">
+                                    <input id="fProgramID" type="text" class="form-control" placeholder="program id" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-4 px-1">
                                   <div class="form-group">
                                     <label>Branch ID</label>
-                                    <input type="text" class="form-control" placeholder="branch id">
+                                    <input id="fBranchID" type="text" class="form-control" placeholder="branch id">
                                   </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                   <div class="form-group">
                                     <label>Section</label>
-                                    <input type="text" class="form-control" placeholder="section">
+                                    <input id="fSection" type="text" class="form-control" placeholder="section">
                                   </div>
                                 </div>
                               </div>
@@ -171,24 +171,24 @@
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Current Semester</label>
-                                    <input type="number" class="form-control" placeholder="Current Sem" value="0">
+                                    <input type="number" class="form-control" placeholder="Current Sem" value="1" disabled>
                                   </div>
                                 </div>
                                 <div class="col-md-4 px-1">
                                   <div class="form-group">
                                     <label>CGPI</label>
-                                    <input type="text" class="form-control" placeholder="cgpi" value="0">
+                                    <input type="text" class="form-control" placeholder="cgpi" value="0.0" disabled>
                                   </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                   <div class="form-group">
                                     <label>Credits Completed</label>
-                                    <input type="number" class="form-control" placeholder="section" value="0">
+                                    <input type="number" class="form-control" placeholder="section" value="0" disabled>
                                   </div>
                                 </div>
                               </div>
                             </form>
-                            <button onClick="addStudent()" type="submit" class="btn btn-primary">Submit</button>
+                            <button onClick="addFreshStudent()" type="submit" class="btn btn-primary">Submit</button>
                           </div>
                         </div>
                     </div>
@@ -204,13 +204,13 @@
                                 <div class="col-md-8 pr-1">
                                   <div class="form-group">
                                     <label>Enrollment ID</label>
-                                    <input type="text" class="form-control" placeholder="Enrollment" value="">
+                                    <input id="lEnrollID" type="text" class="form-control" placeholder="Enrollment" value="">
                                   </div>
                               </div>
                               <div class="col-md-4 pl-1">
                                   <div class="form-group">
                                     <label>Current Semester</label>
-                                    <input type="number" class="form-control" placeholder="Semester" value="">
+                                    <input id="lCurrSem" type="number" class="form-control" placeholder="Semester" value="0">
                                   </div>
                               </div>
                             </div>
@@ -218,13 +218,13 @@
                                 <div class="col-md-6 pr-1">
                                   <div class="form-group">
                                     <label>Email ID</label>
-                                    <input type="email" class="form-control" placeholder="Email" value="example@xyz.com">
+                                    <input id="lEmailID" type="email" class="form-control" placeholder="abc@email.com" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-6 pl-1">
                                   <div class="form-group">
                                     <label>Full Name</label>
-                                    <input type="text" class="form-control" placeholder="Full Name" value="">
+                                    <input id="lFullName" type="text" class="form-control" placeholder="Full Name" value="">
                                   </div>
                                 </div>
                               </div>
@@ -232,19 +232,19 @@
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Date of Birth</label>
-                                    <input type="date" class="form-control" placeholder="DOB" value="">
+                                    <input id="lDOB" type="date" class="form-control" placeholder="DOB" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-4 px-1">
                                   <div class="form-group">
                                     <label>Age</label>
-                                    <input type="number" class="form-control" placeholder="it is just a number" value="">
+                                    <input id="lAge" type="number" class="form-control" placeholder="Age" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="number" class="form-control" placeholder="the digits" value="">
+                                    <input id="lPhoneNo" type="number" class="form-control" placeholder="987..." value="">
                                   </div>
                                 </div>
                               </div>
@@ -252,7 +252,7 @@
                                   <div class="col">
                                     <div class="form-group">
                                       <label>Address</label>
-                                      <input type="text" class="form-control" placeholder="living life here" value="">
+                                      <input id="lAddress" type="text" class="form-control" placeholder="Full Address" value="">
                                     </div>
                                 </div>
                               </div>
@@ -260,44 +260,38 @@
                                 <div class="col-md-4 pr-1">
                                   <div class="form-group">
                                     <label>Program ID</label>
-                                    <input type="text" class="form-control" placeholder="program id" value="">
+                                    <input id="lProgramID" type="text" class="form-control" placeholder="program id" value="">
                                   </div>
                                 </div>
                                 <div class="col-md-4 px-1">
                                   <div class="form-group">
                                     <label>Branch ID</label>
-                                    <input type="text" class="form-control" placeholder="branch id">
+                                    <input id="lBranchID" type="text" class="form-control" placeholder="branch id">
                                   </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                   <div class="form-group">
                                     <label>Section</label>
-                                    <input type="text" class="form-control" placeholder="section">
+                                    <input id="lSection" type="text" class="form-control" placeholder="section">
                                   </div>
                                 </div>
                               </div>
                               <div class="row">
-                                <div class="col-md-4 pr-1">
-                                  <div class="form-group">
-                                    <label>Current Semester</label>
-                                    <input type="number" class="form-control" placeholder="Current Sem" value="0">
-                                  </div>
-                                </div>
-                                <div class="col-md-4 px-1">
+                                <div class="col-md-6 px-1">
                                   <div class="form-group">
                                     <label>CGPI</label>
-                                    <input type="text" class="form-control" placeholder="cgpi" value="0">
+                                    <input id="lCGPI" type="text" class="form-control" placeholder="cgpi" value="0.0">
                                   </div>
                                 </div>
-                                <div class="col-md-4 pl-1">
+                                <div class="col-md-6 pl-1">
                                   <div class="form-group">
                                     <label>Credits Completed</label>
-                                    <input type="number" class="form-control" placeholder="section" value="0">
+                                    <input id="lCreditComp" type="number" class="form-control" placeholder="section" value="0">
                                   </div>
                                 </div>
                               </div>
                             </form>
-                            <button onClick="addStudent()" type="submit" class="btn btn-primary">Submit</button>
+                            <button onClick="addLateralStudent()" type="submit" class="btn btn-primary">Submit</button>
                           </div>
                         </div>
                     </div>
@@ -309,9 +303,7 @@
 
         </center>
     </div>
-
-
-
+        <script src="../script/operating.admission.js"></script>
         <script>
             function openPage(pageName, elmnt, color) {
                 var i, tabcontent, tablinks;
