@@ -84,7 +84,7 @@
                     <a class="navbar-brand" href=""><i class="fa fa-bars"></i></a>
                 </div>
               <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
-                <button type="button" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#notification">
+                <button type="button" onclick="getNotification()" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#notification">
                     <i class="fas fa-envelope fa-2x"></i>
                 </button>
                 <span class="badge badge-pill badge-primary">4</span>&nbsp;&nbsp;
@@ -96,26 +96,17 @@
 
             <!-- Modal content-->
             <div class="modal-content">
-              <div class="modal-header">
-
-                <h4 class="modal-title">Notifications</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                  <ul>
-                      <li> Notif 1
-                      </li>
-                      <li> Notif 2
-                      </li>
-                      <li> Notif 3
-                      </li>
-                      <li> Notif 4
-                      </li>
-                  </ul>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
+                <div class="modal-header">
+                    <h4 class="modal-title">Notifications</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="notifDiv">
+                    <ul id="notifList" style="list-style-type: none;">
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
 
           </div>
@@ -130,6 +121,7 @@
         </div>
 
     </div>
+    <script src="../script/operating.get_notification.js"></script>
     <script src="../assets/js/core/jquery.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>

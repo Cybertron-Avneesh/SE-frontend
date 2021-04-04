@@ -33,9 +33,9 @@
                 <div class="simple-text logo">
                     <center>
                         <a href="../sysadmin/">
-                              <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+                            <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
                         </a>
-                  </center>
+                    </center>
                 </div>
                 <a class="simple-text logo-normal text-center">
                     Shyam Tayal
@@ -78,42 +78,34 @@
                 <div class="navbar-wrapper">
                     <a class="navbar-brand" href=""><i class="fa fa-bars"></i></a>
                 </div>
-              <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
-                <button type="button" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#notification">
-                    <i class="fas fa-envelope fa-2x"></i>
-                </button>
-                <span class="badge badge-pill badge-primary">4</span>&nbsp;&nbsp;
+                <div class="navbar-collapse justify-content-end collapse show" id="navigation">
+                    <button type="button" onclick="getNotification()" class="btn btn-outline-info btn-round" data-toggle="modal"
+                        data-target="#notification">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </button>
+                    <span class="badge badge-pill badge-primary">4</span>&nbsp;&nbsp;
                 </div>
             </div>
         </nav>
         <div id="notification" class="modal fade" role="dialog">
-          <div class="modal-dialog">
+            <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Notifications</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" id="notifDiv">
+                        <ul id="notifList" style="list-style-type: none;">
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
 
-                <h4 class="modal-title">Notifications</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                  <ul>
-                      <li> Notif 1
-                      </li>
-                      <li> Notif 2
-                      </li>
-                      <li> Notif 3
-                      </li>
-                      <li> Notif 4
-                      </li>
-                  </ul>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
             </div>
-
-          </div>
         </div>
         <div class="container">
             <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -122,6 +114,13 @@
                 </div>
             </div>
         </div>
+        <script src="../script/sysadmin.get_notification.js"></script>
+        <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap.min.js"></script>
+        <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+        <script src="../assets/demo/demo.js"></script>
         <!-- End your project here-->
 </body>
 

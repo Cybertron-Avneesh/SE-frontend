@@ -100,7 +100,7 @@
                 </div>
                 <div class="navbar-collapse justify-content-end collapse show" id="navigation">
                     <button type="button" class="btn btn-outline-info btn-round" data-toggle="modal"
-                        data-target="#notification">
+                        data-target="#notification" onclick="getNotification()">
                         <i class="fas fa-envelope fa-2x"></i>
                     </button>
                     <span class="badge badge-pill badge-primary">4</span>&nbsp;&nbsp;
@@ -117,16 +117,9 @@
                         <h4 class="modal-title">Notifications</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body">
-                        <ul>
-                            <li> Notif 1
-                            </li>
-                            <li> Notif 2
-                            </li>
-                            <li> Notif 3
-                            </li>
-                            <li> Notif 4
-                            </li>
+                    <div class="modal-body" id="notifDiv">
+                        
+                        <ul id="notifList" style="list-style-type: none;">
                         </ul>
                     </div>
                     <div class="modal-footer">
@@ -142,6 +135,7 @@
                 </div>
             </div>
         </div>
+        <script src="../script/priviledged.add_notification.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>
