@@ -83,7 +83,7 @@
                             <p>Update Semester</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./add_notification.html">
                             <i class="fa fa-bell"></i>
                             <p>Add Notifications</p>
@@ -93,12 +93,12 @@
                 </ul>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg bg-primary navbar-absolute bg-white">
+        <!-- <nav class="navbar navbar-expand-lg bg-primary navbar-absolute bg-white">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
                     <a class="navbar-brand" href=""><i class="fa fa-bars"></i></a>
                 </div>
-                <div class="navbar-collapse justify-content-end collapse show" id="navigation">
+                <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
                     <button type="button" class="btn btn-outline-info btn-round" data-toggle="modal"
                         data-target="#notification">
                         <i class="fas fa-envelope fa-2x"></i>
@@ -106,11 +106,9 @@
                     <span class="badge badge-pill badge-primary">4</span>&nbsp;&nbsp;
                 </div>
             </div>
-        </nav>
-        <div id="notification" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
+        </nav> -->
+        <!-- <div id="notification" class="modal fade" role="dialog">
+            
                 <div class="modal-content">
                     <div class="modal-header">
 
@@ -134,14 +132,33 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container">
             <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
                 <div class="text-center">
-                    <img src="./../imgs/img/welcome.svg" height="400px" />
+                    <h2>Create a Notification</h2>
+                    <div class="form-control" style="padding:20px;">
+                        <form>
+                            <p class="badge badge-primary">Target is UserID to notify a user else leave blank to
+                                broadcast.</p>
+                            <div class="text-left"><label for="inputUsername"> <b>Target</b></label></div>
+                            <input type="name" class="form-control" id="inputTarget" placeholder="Enter target"
+                                required>
+                            <br>
+                            <div class="text-left"><label for="inputNotifMsg"> <b>Message</b></label></div>
+                            <div>
+                                <textarea id="inputNotifMsg" class="form-control" rows="3" style="margin:10px;"
+                                    placeholder="Enter message to notify..."></textarea>
+                            </div>
+                        </form>
+                        <button onClick="addNotification()" type="submit" class="btn btn-primary">Create
+                            Notification</button>
+
+                    </div>
                 </div>
             </div>
         </div>
+        <script src="../script/priviledged.add_notification.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>

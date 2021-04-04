@@ -111,6 +111,7 @@ async function addLateralStudent() {
                 window.alert(`Student ${student['enrollment_id']} admitted sucessfully!`);
             }
             else {
+                window.alert('Some error occured while creating a new student. Please try again.');
                 console.log(res);
             }
         })

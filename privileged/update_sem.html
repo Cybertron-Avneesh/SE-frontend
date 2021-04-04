@@ -9,11 +9,14 @@
     <title>
         AMSAAA
     </title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- CSS Files -->
     <link href="./../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
@@ -30,9 +33,9 @@
                 <div class="simple-text logo">
                     <center>
                         <a href="../privileged/">
-                              <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+                            <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
                         </a>
-                  </center>
+                    </center>
                 </div>
                 <a class="simple-text logo-normal text-center">
                     Avneesh Kumar
@@ -78,77 +81,86 @@
                             <p>Update Semester</p>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="./add_notification.html">
+                            <i class="fa fa-bell"></i>
+                            <p>Add Notifications</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="panel-header panel-header-sm">
-          <canvas id="bigDashboardChart"></canvas>
+            <canvas id="bigDashboardChart"></canvas>
         </div>
         <div class="content">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Program</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-block btn-outline-default dropdown-toggle btn-simple no-caret" data-toggle="dropdown" aria-expanded="false">
-                                        Select Program
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" data-value="B.tech">B.Tech</a>
-                                        <a class="dropdown-item" data-value="M.tech">M.Tech</a>
-                                        <a class="dropdown-item" data-value="Ph.D">Ph.D</a>
-                                    </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Program</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <button type="button"
+                                    class="btn btn-block btn-outline-default dropdown-toggle btn-simple no-caret"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Select Program
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" data-value="B.tech">B.Tech</a>
+                                    <a class="dropdown-item" data-value="M.tech">M.Tech</a>
+                                    <a class="dropdown-item" data-value="Ph.D">Ph.D</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" >
-                            <div class="card-header">
-                                <h4 class="card-title">Branch</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-block btn-outline-default dropdown-toggle btn-simple no-caret" data-toggle="dropdown">
-                                        Select Branch
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" data-value="IT">IT</a>
-                                        <a class="dropdown-item" data-value="IT BI">IT BI</a>
-                                        <a class="dropdown-item" data-value="ECE">ECE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Semester</h4>
-                            </div>
-                            <br>
-                            <div class="card-body">
-                                <input type="number" class="form-control" placeholder="Semester">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <!-- <input type="submit" class="btn btn-primary btn-outline-default" name="Filter"> -->
-                        <button class="btn btn-outline-primary btn-md">
-                            <i class="fa fa-filter"></i>
-                            Filter
-                        </button>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Branch</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <button type="button"
+                                    class="btn btn-block btn-outline-default dropdown-toggle btn-simple no-caret"
+                                    data-toggle="dropdown">
+                                    Select Branch
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" data-value="IT">IT</a>
+                                    <a class="dropdown-item" data-value="IT BI">IT BI</a>
+                                    <a class="dropdown-item" data-value="ECE">ECE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Semester</h4>
+                        </div>
+                        <br>
+                        <div class="card-body">
+                            <input type="number" class="form-control" placeholder="Semester">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <!-- <input type="submit" class="btn btn-primary btn-outline-default" name="Filter"> -->
+                    <button class="btn btn-outline-primary btn-md">
+                        <i class="fa fa-filter"></i>
+                        Filter
+                    </button>
+                </div>
+            </div>
 
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-9">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-9">
                     <table class="table">
                         <tbody>
                             <tr>
@@ -172,8 +184,8 @@
                                 <td>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" checked>
-                                          <span class="form-check-sign"></span>
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <span class="form-check-sign"></span>
                                         </label>
                                     </div>
                                 </td>
@@ -193,17 +205,17 @@
 
                         </tbody>
                     </table>
-                    </div>
                 </div>
-                <!-- Table (Checkbox, Name, Enrollment, Semester)-->
+            </div>
+            <!-- Table (Checkbox, Name, Enrollment, Semester)-->
         </div>
     </div>
-        <!-- End your project here-->
+    <!-- End your project here-->
 
-        <script src="../assets/js/core/jquery.min.js"></script>
-        <script src="../assets/js/core/popper.min.js"></script>
-        <script src="../assets/js/core/bootstrap.min.js"></script>
-        <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 </body>
 
 </html>
