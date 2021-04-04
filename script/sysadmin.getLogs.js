@@ -1,18 +1,18 @@
 let baseUrl = 'http://localhost:5440/logs';
 
-async function getLogs(){
+async function getLogs() {
     let response = await fetch(baseUrl);
     let data = await response.json();
     console.log(data);
     finalList = data['logs'];
     console.log(finalList);
     // data['users'].array.forEach(element => {
-        
+
     // });
     table = document.getElementById('logsTable');
     cnt = 0;
     finalList.reverse();
-    finalList = finalList.slice(0, 10);
+    finalList = finalList.slice(0, 50);
     finalList.forEach(element => {
         cnt++;
         // roleTag = getRoleTag(element["admin_level"]);
