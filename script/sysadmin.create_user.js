@@ -1,5 +1,9 @@
 let users = [];
 
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 function addUsers() {
 
     // For connecting Backend
@@ -8,9 +12,9 @@ function addUsers() {
     var user = {
         user_id: document.getElementById('inputUsername').value,
         admin_level: roleReturningFun(document.querySelectorAll('input[name="role"]')),
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     var options = {
         method: 'POST',

@@ -1,13 +1,16 @@
 let branches = [];
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
 
 function addBranch() {
     var branch = {
         branch_id: document.getElementById('createBranchID').value,
         branch_name: document.getElementById('createBranchName').value,
         program_id: document.getElementById('createProgramID').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     
     var options = {
@@ -39,9 +42,9 @@ function updateBranch() {
         branch_id: document.getElementById('upBranchID').value,
         branch_name: document.getElementById('upBranchName').value,
         program_id: document.getElementById('upProgramID').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     
     var options = {
@@ -72,9 +75,9 @@ function deleteBranch() {
     var branch = {
         branch_id: document.getElementById('delBranchID').value,
         program_id: document.getElementById('delProgramID').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     
     var options = {
@@ -103,8 +106,8 @@ function deleteBranch() {
 
 async function getList() {
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2
     }
     var options = {
         method: 'POST',

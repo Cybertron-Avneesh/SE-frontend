@@ -1,3 +1,8 @@
+
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 function removeUsers() {
 
     // For connecting Backend
@@ -5,8 +10,8 @@ function removeUsers() {
 
     var user = {
         user_id: document.getElementById('inputUsername').value,
-        my_id: "IIB2019050",
-        my_level: 2,
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2
     }
     var options = {
         method: 'POST',

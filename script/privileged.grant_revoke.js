@@ -1,4 +1,7 @@
 let baseUrl = 'http://localhost:5440/user/list?admin_level=0';
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
 listOfOperatingUser()
 
 document.querySelector('.row').addEventListener('click',async (e)=>{
@@ -29,9 +32,9 @@ function getAccessStatus(status) {
 }
 async function grant_Revoke(userId, accessStatus){
     reqBody = {
-        my_id: 'iib2019050',
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
         has_access: accessStatus,
-        my_level: 1,
         user_id: userId
     };
     console.log(reqBody)
@@ -55,8 +58,8 @@ async function listOfOperatingUser() {
     console.log(baseUrl)
 
     var cred = {
-        my_id:"iib2019050",
-        my_level:2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2
     }
 
     var options = {

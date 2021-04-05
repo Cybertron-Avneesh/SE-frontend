@@ -1,4 +1,7 @@
 let baseUrl = 'http://localhost:5440/user/list?admin_level=3';
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
 
 function getRoleTag(roleID){
 
@@ -34,8 +37,8 @@ async function listOfUser() {
     // let data = await response.json();
     // console.log(data);
     var cred = {
-        my_id:"iib2019050",
-        my_level:2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
     }
     var options = {
         method: 'POST',

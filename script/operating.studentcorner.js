@@ -1,14 +1,18 @@
 let baseUrl = 'http://localhost:5440/student/create/IIB2019001?action=2';
 let student;
 
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 async function searchStudent() {
     // let response = await fetch(baseUrl);
     // let data = await response.json();
     // console.log(data);
     var enrollNo = document.getElementById('inputEnroll').value;
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
     }
     var options = {
         method: 'POST',
@@ -70,13 +74,13 @@ function getVerificationInfo(status) {
     if (status == 1) {
         return `<span style="color: green; font-size: xx-large;">
         <i class="fa fa-check-circle">
-          Verfied
+          Verified
         </i>
       </span>`
     } else {
         return `<span style="color: red; font-size: xx-large;">
         <i class="fa fa-times-circle">
-          Unverfied
+          Unverified
         </i>
       </span>`
     }
@@ -85,8 +89,8 @@ function getVerificationInfo(status) {
 async function markAsVerified() {
     var cred = student;
     cred["is_verified"] = 1;
-    cred["my_id"] = "iib2019050";
-    cred["my_level"] = 2;
+    cred["my_id"] = myID??"";
+    cred["my_level"] = myLevel;
     console.log(cred);
 
     var options = {
@@ -99,7 +103,7 @@ async function markAsVerified() {
     await fetch(`http://localhost:5440/student/create/${cred['enrollment_id']}?action=3`, options)
         .then(res => {
             if (res.status === 200) {
-                window.alert("Student detail updated sucessfully!");
+                window.alert(`Student ${enrollNo} detail updated sucessfully!`);
             }
         })
         .catch(err => console.error(err))
@@ -110,8 +114,8 @@ async function sendFeeNotification() {
     var enrollNo = document.getElementsByClassName('currEnrollID')[0].innerHTML;
     var msg = document.getElementById('inputNotifMsg').value;
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2,
+        my_id: myID,
+        my_level: myLevel,
         enrollment_id: enrollNo,
         description: msg
     }
@@ -126,7 +130,7 @@ async function sendFeeNotification() {
     await fetch(`http://localhost:5440/student/notification?action=1`, options)
         .then(res => {
             if (res.status === 200) {
-                window.alert("Reminder sent successfully!");
+                window.alert(`Fee reminder sent successfully to ${enrollNo}!`);
             }
         })
         .catch(err => console.error(err))
@@ -139,8 +143,8 @@ async function takeDisciplinaryAction() {
     var action = document.getElementById('inputAction').value;
     var date = document.getElementById('inputDate').value;
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2,
+        my_id: myID??"",
+        my_level: myLevel,
         enrollment_id: enrollNo,
         reason: reason,
         action: action
@@ -157,6 +161,7 @@ async function takeDisciplinaryAction() {
         .then(res => {
             res.json()
                 .then(data => {
+                    window.alert(`Disciplinary Action details updated successfully for ${enrollNo}!`);
                     console.log(data);
                 })
                 .catch(err => {
@@ -184,8 +189,8 @@ function getPaidStatus(status) {
 async function getFeeStatus() {
 
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2,
+        my_id: myID??"",
+        my_level: myLevel,
         enrollment_id: student['enrollment_id'],
     }
     var options = {

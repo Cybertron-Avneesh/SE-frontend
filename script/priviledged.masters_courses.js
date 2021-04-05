@@ -1,5 +1,9 @@
 let courses = [];
 
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 function addCourse() {
 
     var course = {
@@ -8,9 +12,9 @@ function addCourse() {
         course_id: document.getElementById('createCourseID').value,
         course_name: document.getElementById('createCourseName').value,
         credits: document.getElementById('createCourseCredit').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     
     var options = {
@@ -43,9 +47,9 @@ function updateCourse() {
         course_id: document.getElementById('upCourseID').value,
         course_name: document.getElementById('upCourseName').value,
         credits: document.getElementById('upCourseCredit').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     
     var options = {
@@ -76,9 +80,9 @@ function deleteCourse() {
     var course = {
         semester_id: document.getElementById('upSemID').value,
         course_id: document.getElementById('upCourseID').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     
     var options = {
@@ -109,8 +113,8 @@ let baseUrl = 'http://localhost:5440/masters/program';
 async function getList() {
 
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
     }
     var options = {
         method: 'POST',

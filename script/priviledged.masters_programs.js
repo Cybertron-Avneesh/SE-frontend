@@ -1,14 +1,18 @@
 let baseUrl = 'http://localhost:5440/masters/program';
 
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 let programs = [];
 
 function addProgram() {
     var program = {
         program_id: document.getElementById('createProgramID').value,
         program_name: document.getElementById('createProgramName').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     var options = {
         method: 'POST',
@@ -37,9 +41,9 @@ function updateProgram() {
     var program = {
         program_id: document.getElementById('upProgramID').value,
         program_name: document.getElementById('upProgramName').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     var options = {
         method: 'POST',
@@ -67,9 +71,9 @@ function deleteProgram() {
 
     var program = {
         program_id: document.getElementById('delProgramID').value,
-        my_id: "IIB2019050",
-        my_level: 2,
-        name: "op3"
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        name: currUserObj["name"]
     }
     var options = {
         method: 'POST',
@@ -96,8 +100,8 @@ function deleteProgram() {
 
 async function getList() {
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2
     }
     var options = {
         method: 'POST',

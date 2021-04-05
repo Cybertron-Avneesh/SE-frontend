@@ -1,3 +1,7 @@
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 async function addNotification() {
 
     var target = document.getElementById('inputTarget').value;
@@ -6,8 +10,8 @@ async function addNotification() {
         target = "";
     }
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2,
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
         enrollment_id: target,
         description: msg
     }
@@ -33,9 +37,9 @@ async function addNotification() {
 async function getNotification() {
 
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2,
-        enrollment_id: 'IIB2019010',
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
+        enrollment_id: myID??"",
     }
     var options = {
         method: 'POST',

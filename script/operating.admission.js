@@ -1,4 +1,8 @@
 
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 async function addFreshStudent() {
     var enrollNo = document.getElementById('fEnrollID').value;
     var email = document.getElementById('fEmailID').value;
@@ -33,8 +37,8 @@ async function addFreshStudent() {
         is_verified: isVerified,
         grade_card: null,
         medal: null,
-        my_id: "IIB2019050",
-        my_level: 2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
     }
 
     var options = {
@@ -94,8 +98,8 @@ async function addLateralStudent() {
         is_verified: isVerified,
         grade_card: null,
         medal: null,
-        my_id: "IIB2019050",
-        my_level: 2
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
     }
 
     var options = {

@@ -1,3 +1,7 @@
+currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
+myID = currUserObj["user_id"];
+myLevel = currUserObj["admin_level"]; 
+
 function getPaidStatus(status) {
     if (status === 1) {
         return `<div>
@@ -15,8 +19,8 @@ function getPaidStatus(status) {
 async function getFeeStatusForAll() {
 
     var cred = {
-        my_id: "iib2019050",
-        my_level: 2,
+        my_id: myID??"TEMPUSER",
+        my_level: myLevel??2,
         enrollment_id: '',
     }
     var options = {
