@@ -20,9 +20,22 @@ function checkCred() {
             res.json()
                 .then(data => {
                     console.log(data)
-                    if(res.status===200)
-                    window.location.replace('./sysadmin/index.html')
-
+                    data["admin_level"] = cred["admin_level"];
+                    if(res.status===200){
+                        window.localStorage.setItem('currUserObj', JSON.stringify(data));
+                        if(cred["admin_level"] === 0){
+                            window.location.replace('./operating/index.html');
+                        }
+                        else if(cred["admin_level"] === 1){
+                            window.location.replace('./privileged/index.html');
+                        }
+                        else if(cred["admin_level"] === 2){
+                            window.location.replace('./sysadmin/index.html');
+                        }
+                        // window.location.replace('./sysadmin/index.html')
+                    } else {
+                        window.alert("Please check your credentials.");
+                    }
                 })
                 .catch(err => console.log(`${err}`))
         })
