@@ -43,10 +43,10 @@
                         </a>
                   </center>
                 </div>
-                <a class="simple-text logo-normal text-center">
-                    Devu Don
+                <a class="simple-text logo-normal text-center" id="currUserInfo">
+                    <span id="currUserName">Shyam tayal</span>
                     <br>
-                    Operating User
+                    <span id="currUserLevel">Operating User</span>
                 </a>
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -83,7 +83,7 @@
                 <div class="navbar-wrapper">
                     <a class="navbar-brand" href=""><i class="fa fa-bars"></i></a>
                 </div>
-              <div class="navbar-collapse justify-content-end collapse show" id="navigation" style="">
+              <div class="navbar-collapse justify-content-end collapse show" id="navigation" >
                 <button type="button" onclick="getNotification()" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#notification">
                     <i class="fas fa-envelope fa-2x"></i>
                 </button>
@@ -121,6 +121,7 @@
         </div>
 
     </div>
+    <script src="../script/detailUpdater.js"></script>
     <script src="../script/operating.get_notification.js"></script>
     <script src="../assets/js/core/jquery.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
