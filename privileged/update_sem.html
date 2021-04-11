@@ -88,18 +88,59 @@
                         </a>
                     </li>
                     <li style="position:fixed; bottom:1em; width:200px;">
-                            <a href="../login.html">
-                                <i class="now-ui-icons sport_user-run"></i>
-                                <p>Logout</p>
-                            </a>
+                        <a href="../login.html">
+                            <i class="now-ui-icons sport_user-run"></i>
+                            <p>Logout</p>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="panel-header panel-header-sm">
-            <canvas id="bigDashboardChart"></canvas>
-        </div>
-        <div class="content">
+
+        <center>
+            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
+                <div class=" card-header">
+                    <h3>Update Semester
+                    </h3>
+                </div>
+                <div class="card-body"
+                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="title">Enter Details</h5>
+                      </div>
+                      <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 pr-1">
+                                  <div class="form-group">
+                                    <label>Program ID</label>
+                                    <input id="fProgramID" type="text" class="form-control" placeholder="B.Tech" value="">
+                                  </div>
+                              </div>
+                              <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                  <label>Branch ID</label>
+                                  <input id="fBranchID" type="text" class="form-control" placeholder="IT" value="">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                  <div class="form-group">
+                                    <label>Current Semester</label>
+                                    <input id="fSemester" type="number" class="form-control" placeholder="1" value="">
+                                  </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button onClick="updateSem()" type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+        <!-- <div class="content">
             <div class="row">
                 <div class="col"></div>
                 <div class="col">
@@ -156,7 +197,7 @@
                     </div>
                 </div>
                 <div class="col-1">
-                    <!-- <input type="submit" class="btn btn-primary btn-outline-default" name="Filter"> -->
+                    <!-- <input type="submit" class="btn btn-primary btn-outline-default" name="Filter">
                     <button class="btn btn-outline-primary btn-md">
                         <i class="fa fa-filter"></i>
                         Filter
@@ -212,7 +253,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
             <!-- Table (Checkbox, Name, Enrollment, Semester)-->
         </div>
     </div>
