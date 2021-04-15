@@ -146,7 +146,7 @@
                                     <div class="col">
                                       <div class="form-group">
                                         <label>Course ID</label>
-                                        <input id="CourseID" type="number" class="form-control" placeholder="SWE" value="">
+                                        <input id="CourseID" type="text" class="form-control" placeholder="SWE" value="">
                                       </div>
                                     </div>
                                 </div>
@@ -154,32 +154,32 @@
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                           <label>C1</label>
-                                          <input id="marksc1" type="text" class="form-control" placeholder="0" value="">
+                                          <input id="marksc1" type="number" class="form-control" placeholder="0" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-4 px-1">
                                         <div class="form-group">
                                           <label>C2</label>
-                                          <input id="marksc2" type="text" class="form-control" placeholder="0" value="">
+                                          <input id="marksc2" type="number" class="form-control" placeholder="0" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-4 pl-1">
                                         <div class="form-group">
                                           <label>C3</label>
-                                          <input id="marksc3" type="text" class="form-control" placeholder="0" value="">
+                                          <input id="marksc3" type="number" class="form-control" placeholder="0" value="">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label>SGPI</label>
                                             <input id="sgpi" type="text" class="form-control" placeholder="SGPI" value="">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
-                            <button onClick="addAssessment()" type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="assessment">Submit</button>
                         </div>
                     </div>
 
@@ -291,6 +291,8 @@
         </script>
 
         <script src="../script/detailUpdater.js"></script>
+        <script src="../script/priviledged.control.js"></script>
+
 
 </body>
 
