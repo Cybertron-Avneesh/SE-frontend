@@ -3,7 +3,7 @@ let student;
 
 currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
 myID = currUserObj["user_id"];
-myLevel = currUserObj["admin_level"]; 
+myLevel = currUserObj["admin_level"];
 
 async function searchStudent() {
     // let response = await fetch(baseUrl);
@@ -87,6 +87,29 @@ function getVerificationInfo(status) {
 }
 
 async function markAsVerified() {
+    var cred = student;
+    cred["is_verified"] = 1;
+    cred["my_id"] = myID??"";
+    cred["my_level"] = myLevel;
+    console.log(cred);
+
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cred)
+    }
+    await fetch(`http://localhost:5440/student/create/${cred['enrollment_id']}?action=3`, options)
+        .then(res => {
+            if (res.status === 200) {
+                window.alert(`Student ${enrollNo} detail updated sucessfully!`);
+            }
+        })
+        .catch(err => console.error(err))
+}
+
+async function () {
     var cred = student;
     cred["is_verified"] = 1;
     cred["my_id"] = myID??"";

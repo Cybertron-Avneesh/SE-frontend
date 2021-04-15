@@ -55,12 +55,12 @@
               <p>Fees Status</p>
             </a>
           </li>
-          <!-- <li>
+          <li>
             <a href="./result_comp.html">
               <i class="fa fa-file-archive"></i>
               <p>Result Compilation</p>
             </a>
-          </li> -->
+          </li>
           <li>
             <a href="admission.html">
               <i class="fa fa-graduation-cap"></i>
@@ -101,6 +101,12 @@
                 <i class=" fa fa-user-shield"></i>
                 <span class="d-md-block">Verify</span>
               </button>
+            </li>
+            <li>
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#change">
+                  <i class=" fa fa-user-shield"></i>
+                  <span class="d-md-block">Change Branch</span>
+                </button>
             </li>
             <li class="nav-item">
               <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#generate">
@@ -154,6 +160,30 @@
           </div>
           <div class="modal-footer ">
             <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" onclick="markAsVerified()">Mark as Verfied</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal fade" id="change" role="dialog">
+      <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Branch Change</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <h3>
+                <i class="fa fa-user-circle"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <input id="inputBranch" type="text" value="" class="form-control text-info" style="margin:10px;" placeholder="New Branch ID">
+          </div>
+          <div class="modal-footer ">
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" onclick="branchChange()">Change</button>
             <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
           </div>
         </div>
