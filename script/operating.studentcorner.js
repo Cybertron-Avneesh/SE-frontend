@@ -113,7 +113,7 @@ async function branchChange() {
     var cred = student;
     cred["my_id"] = myID??"";
     cred["my_level"] = myLevel;
-    cred["branch_id"] = document.getElementById('inputBranch');
+    cred["branch_id"] = document.getElementById('inputBranch').value;
     console.log(cred);
 
     var options = {
@@ -127,6 +127,8 @@ async function branchChange() {
         .then(res => {
             if (res.status === 200) {
                 window.alert(`Student ${enrollNo} Branch updated sucessfully!`);
+            } else {
+
             }
         })
         .catch(err => console.error(err))
