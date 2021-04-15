@@ -109,11 +109,11 @@ async function markAsVerified() {
         .catch(err => console.error(err))
 }
 
-async function () {
+async function branchChange() {
     var cred = student;
-    cred["is_verified"] = 1;
     cred["my_id"] = myID??"";
     cred["my_level"] = myLevel;
+    cred["branch_id"] = document.getElementById('inputBranch');
     console.log(cred);
 
     var options = {
@@ -126,7 +126,7 @@ async function () {
     await fetch(`http://localhost:5440/student/create/${cred['enrollment_id']}?action=3`, options)
         .then(res => {
             if (res.status === 200) {
-                window.alert(`Student ${enrollNo} detail updated sucessfully!`);
+                window.alert(`Student ${enrollNo} Branch updated sucessfully!`);
             }
         })
         .catch(err => console.error(err))
