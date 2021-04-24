@@ -115,11 +115,11 @@
                         <i class=" fa fa-plus"></i>
                         Assessment
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Award', this, 'green'); getList()">
+                    <button class="btn btn-round tablink" id="award" onclick="openPage('Award', this, 'green'); ">
                         <i class="fa fa-list"></i>
                         Award
                     </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Archive', this, 'blue')">
+                    <button class="btn btn-round tablink" id="alumni" onclick="openPage('Archive', this, 'blue')">
                         <i class="fa fa-edit"></i>
                         Archive
                     </button>
@@ -204,8 +204,8 @@
                                     Award
                                 </th>
                             </thead>
-                            <tbody id="listBranches">
-                                <tr>
+                            <tbody id="listAwards">
+                                <!-- <tr>
                                     <td>
                                         1
                                     </td>
@@ -221,7 +221,7 @@
                                     <td>
                                         Gold
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -244,7 +244,7 @@
                                     Pragram ID
                                 </th>
                             </thead>
-                            <tbody id="listBranches">
+                            <tbody id="listAlumni">
                                 <tr>
                                     <td>
                                         1
