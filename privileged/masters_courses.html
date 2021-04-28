@@ -104,250 +104,260 @@
                 </ul>
             </div>
         </div>
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
 
-        <center>
-            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
-                <div class=" card-header">
-                    <h3>Masters / Courses
-                    </h3>
-                </div>
-                <div class="card-body "
-                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
-                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
-                        <i class=" fa fa-plus"></i>
-                        Create
-                    </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
-                        <i class="fa fa-list"></i>
-                        List
-                    </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
-                        <i class="fa fa-edit"></i>
-                        Update
-                    </button>
-
-                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
-                        <i class=" fa fa-trash"></i>
-                        Delete
-                    </button>
-
-                    <hr>
-
-                    <div id="Create" class="tabcontent">
-                        <div class="form-control" style="padding:20px;">
-                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
-                            <form>
-                                <div class="text-left"><label for="createSemID"> <b>Sem ID</b></label></div>
-                                <input type="name" class="form-control" id="createSemID" placeholder="Enter Semester ID"
-                                    required>
-                                <br>
-                                <div class="text-left"><label for="createBranchID"> <b>Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="createBranchID"
-                                    placeholder="Enter Branch ID" required>
-                                <br>
-                                <div class="text-left"><label for="createCourseID"> <b>Course ID</b></label></div>
-                                <input type="name" class="form-control" id="createCourseID"
-                                    placeholder="Enter Course ID" required>
-                                <br>
-                                <div class="text-left"><label for="createCourseName"> <b>Course Name</b></label></div>
-                                <input type="name" class="form-control" id="createCourseName"
-                                    placeholder="Enter Course Name" required>
-                                <br>
-                                <div class="text-left"><label for="createCourseCredit"> <b>Course Credits</b></label>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+                        <center>
+                            <div class="card">
+                                <div class=" card-header">
+                                    <h3>Masters / Courses
+                                    </h3>
                                 </div>
-                                <input type="number" class="form-control" id="createCourseCredit"
-                                    placeholder="Enter Course Credits" required>
-                            </form>
-                            <button onClick="addCourse()" type="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                                <div class="card-body "
+                                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
+                                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
+                                        <i class=" fa fa-plus"></i>
+                                        Create
+                                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
+                                        <i class="fa fa-list"></i>
+                                        List
+                                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
+                                        <i class="fa fa-edit"></i>
+                                        Update
+                                    </button>
+
+                                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
+                                        <i class=" fa fa-trash"></i>
+                                        Delete
+                                    </button>
+
+                                    <hr>
+
+                                    <div id="Create" class="tabcontent">
+                                        <div class="form-control" style="padding:20px;">
+                                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
+                                            <form>
+                                                <div class="text-left"><label for="createSemID"> <b>Sem ID</b></label></div>
+                                                <input type="name" class="form-control" id="createSemID" placeholder="Enter Semester ID"
+                                                    required>
+                                                <br>
+                                                <div class="text-left"><label for="createBranchID"> <b>Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="createBranchID"
+                                                    placeholder="Enter Branch ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="createCourseID"> <b>Course ID</b></label></div>
+                                                <input type="name" class="form-control" id="createCourseID"
+                                                    placeholder="Enter Course ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="createCourseName"> <b>Course Name</b></label></div>
+                                                <input type="name" class="form-control" id="createCourseName"
+                                                    placeholder="Enter Course Name" required>
+                                                <br>
+                                                <div class="text-left"><label for="createCourseCredit"> <b>Course Credits</b></label>
+                                                </div>
+                                                <input type="number" class="form-control" id="createCourseCredit"
+                                                    placeholder="Enter Course Credits" required>
+                                            </form>
+                                            <button onClick="addCourse()" type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="List" class="tabcontent">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+
+                                                <!-- name, username, role, sn -->
+                                                <th>
+                                                    #
+                                                </th>
+                                                <th>
+                                                    SemID
+                                                </th>
+                                                <th>
+                                                    BranchID
+                                                </th>
+                                                <th>
+                                                    CourseID
+                                                </th>
+                                                <th>
+                                                    Credits
+                                                </th>
+                                                <th>
+                                                    CourseName
+                                                </th>
+                                            </thead>
+                                            <tbody id="listCourses">
+                                                <tr>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        IT_1
+                                                    </td>
+                                                    <td>
+                                                        IT
+                                                    </td>
+                                                    <td>
+                                                        ITP
+                                                    </td>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        Introduction to programmming
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        IT_1
+                                                    </td>
+                                                    <td>
+                                                        IT
+                                                    </td>
+                                                    <td>
+                                                        PHY
+                                                    </td>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        Physics
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        ITBI_2
+                                                    </td>
+                                                    <td>
+                                                        BI
+                                                    </td>
+                                                    <td>
+                                                        BPM
+                                                    </td>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        Business Process Modelling
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        ITBI_3
+                                                    </td>
+                                                    <td>
+                                                        ITBI
+                                                    </td>
+                                                    <td>
+                                                        FLIS
+                                                    </td>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        Foreign Language
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        ITBI_4
+                                                    </td>
+                                                    <td>
+                                                        ITBI
+                                                    </td>
+                                                    <td>
+                                                        FINTECH
+                                                    </td>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        Financial Technology
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div id="Update" class="tabcontent">
+                                        <span class="badge badge-default">
+                                        </span>
+                                        <br>
+                                        <div class="form-control" style="padding:20px;">
+                                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
+                                            <form>
+                                                <div class="text-left"><label for="upSemID"> <b>Sem ID</b></label></div>
+                                                <input type="name" class="form-control" id="upSemID" placeholder="Enter Semester ID"
+                                                    required>
+                                                <!-- <br>
+                                                <div class="text-left"><label for="upBranchID"> <b>Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="upBranchID"
+                                                    placeholder="Enter Branch ID" required> -->
+                                                <br>
+                                                <div class="text-left"><label for="upCourseID"> <b>Course ID</b></label></div>
+                                                <input type="name" class="form-control" id="upCourseID"
+                                                    placeholder="Enter Course ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="upCourseName"> <b>Course Name</b></label></div>
+                                                <input type="name" class="form-control" id="upCourseName"
+                                                    placeholder="Enter Course Name" required>
+                                                <br>
+                                                <div class="text-left"><label for="upCourseCredit"> <b>Course Credits</b></label></div>
+                                                <input type="number" class="form-control" id="upCourseCredit"
+                                                    placeholder="Enter Course Credits" required>
+                                            </form>
+                                            <button onClick="updateCourse()" type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="Delete" class="tabcontent">
+                                        <div class="form-control" style="padding:20px;">
+                                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
+                                            <form>
+                                                <div class="text-left"><label for="delSemID"> <b>Sem ID</b></label></div>
+                                                <input type="name" class="form-control" id="delSemID" placeholder="Enter Semester ID"
+                                                    required>
+                                                <br>
+                                                <!-- <div class="text-left"><label for="delBranchID"> <b>Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="delBranchID"
+                                                    placeholder="Enter Branch ID" required> -->
+                                                <br>
+                                                <div class="text-left"><label for="delCourseID"> <b>Course ID</b></label></div>
+                                                <input type="name" class="form-control" id="delCourseID"
+                                                    placeholder="Enter Course ID" required>
+                                                <br>
+                                            </form>
+                                            <button onClick="deleteCourse()" type="submit" class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </center>
                     </div>
-
-                    <div id="List" class="tabcontent">
-                        <table class="table">
-                            <thead class=" text-primary">
-
-                                <!-- name, username, role, sn -->
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    SemID
-                                </th>
-                                <th>
-                                    BranchID
-                                </th>
-                                <th>
-                                    CourseID
-                                </th>
-                                <th>
-                                    Credits
-                                </th>
-                                <th>
-                                    CourseName
-                                </th>
-                            </thead>
-                            <tbody id="listCourses">
-                                <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        IT_1
-                                    </td>
-                                    <td>
-                                        IT
-                                    </td>
-                                    <td>
-                                        ITP
-                                    </td>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        Introduction to programmming
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        IT_1
-                                    </td>
-                                    <td>
-                                        IT
-                                    </td>
-                                    <td>
-                                        PHY
-                                    </td>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        Physics
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                        ITBI_2
-                                    </td>
-                                    <td>
-                                        BI
-                                    </td>
-                                    <td>
-                                        BPM
-                                    </td>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        Business Process Modelling
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        ITBI_3
-                                    </td>
-                                    <td>
-                                        ITBI
-                                    </td>
-                                    <td>
-                                        FLIS
-                                    </td>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        Foreign Language
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        5
-                                    </td>
-                                    <td>
-                                        ITBI_4
-                                    </td>
-                                    <td>
-                                        ITBI
-                                    </td>
-                                    <td>
-                                        FINTECH
-                                    </td>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        Financial Technology
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="Update" class="tabcontent">
-                        <span class="badge badge-default">
-                        </span>
-                        <br>
-                        <div class="form-control" style="padding:20px;">
-                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
-                            <form>
-                                <div class="text-left"><label for="upSemID"> <b>Sem ID</b></label></div>
-                                <input type="name" class="form-control" id="upSemID" placeholder="Enter Semester ID"
-                                    required>
-                                <!-- <br>
-                                <div class="text-left"><label for="upBranchID"> <b>Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="upBranchID"
-                                    placeholder="Enter Branch ID" required> -->
-                                <br>
-                                <div class="text-left"><label for="upCourseID"> <b>Course ID</b></label></div>
-                                <input type="name" class="form-control" id="upCourseID"
-                                    placeholder="Enter Course ID" required>
-                                <br>
-                                <div class="text-left"><label for="upCourseName"> <b>Course Name</b></label></div>
-                                <input type="name" class="form-control" id="upCourseName"
-                                    placeholder="Enter Course Name" required>
-                                <br>
-                                <div class="text-left"><label for="upCourseCredit"> <b>Course Credits</b></label></div>
-                                <input type="number" class="form-control" id="upCourseCredit"
-                                    placeholder="Enter Course Credits" required>
-                            </form>
-                            <button onClick="updateCourse()" type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div>
-
-                    <div id="Delete" class="tabcontent">
-                        <div class="form-control" style="padding:20px;">
-                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
-                            <form>
-                                <div class="text-left"><label for="delSemID"> <b>Sem ID</b></label></div>
-                                <input type="name" class="form-control" id="delSemID" placeholder="Enter Semester ID"
-                                    required>
-                                <br>
-                                <!-- <div class="text-left"><label for="delBranchID"> <b>Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="delBranchID"
-                                    placeholder="Enter Branch ID" required> -->
-                                <br>
-                                <div class="text-left"><label for="delCourseID"> <b>Course ID</b></label></div>
-                                <input type="name" class="form-control" id="delCourseID"
-                                    placeholder="Enter Course ID" required>
-                                <br>
-                            </form>
-                            <button onClick="deleteCourse()" type="submit" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-
-        </center>
-
+        </div>
+    </div>
 
 
 

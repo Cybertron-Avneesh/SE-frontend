@@ -76,7 +76,10 @@
         </ul>
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg bg-primary navbar-absolute bg-white">
+    <div class="main-panel">
+
+
+    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
       <div class="container-fluid">
         <div class="navbar-wrapper">
           <div class="navbar-toggle">
@@ -102,7 +105,7 @@
                 <span class="d-md-block">Verify</span>
               </button>
             </li>
-            <li>
+            <li class="nav-item">
                 <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#change">
                   <i class=" fa fa-user-shield"></i>
                   <span class="d-md-block">Change Branch</span>
@@ -387,29 +390,32 @@
 
       </div>
     </div>
+    <div class="panel-header panel-header-sm">
+    </div>
     <div class="content">
-      <div class="d-flex justify-content-center align-items-center" style="height:80vh;">
+      <!-- <div class="d-flex justify-content-center align-items-center" style="height:80vh;"> -->
         <div class="row">
           <div class="col">
-            <br>
-            <br>
-            <center>
-              <div>
-                <input type="text" name="Enrollment No." id="inputEnroll" placeholder="Enter Enrollment No."
-                  style="border-color: grey; padding: 4px;">
-                <button class="btn btn-sm btn-rounded btn-icon" onclick="searchStudent()">
-                  <i class="fa fa-search" style="color: aliceblue;"></i>
-                </button>
-              </div>
 
-            </center>
-            <div class="card" id="detailCard">
-              <div>
-                <center>
-                  <p>
-                    Search an Enrollment no.
-                  </p>
-                </center>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Search Student
+                    </h4>
+                    <div class="input-group no-border" >
+                      <input class="form-control" id="inputEnroll" type="text" placeholder="Enter Election ID" value="">
+                      <div class="input-group-append">
+                            <button class="btn btn-outline-primary btn-round btn-icon" id="searchStudent()">
+                                <i class="now-ui-icons ui-1_zoom-bold"></i>
+                            </button>
+                      </div>
+                    </div>
+                </div>
+
+              <div class="card-body" >
+                  <div class="card" id="detailCard">
+
+                  </div>
               </div>
               <!-- <div class="card-header">
                 <h3 class="card-title">
@@ -431,6 +437,7 @@
       </div>
     </div>
   </div>
+</div>
   <script src="../script/detailUpdater.js"></script>
   <script src="../script/operating.studentcorner.js"></script>
   <script src="../script/operating.print.js"></script>

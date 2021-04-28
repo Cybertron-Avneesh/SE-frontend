@@ -78,22 +78,26 @@
                         </ul>
                   </div>
             </div>
+            <div class="main-panel" id="main-panel">
+                <div class="panel-header panel-header-sm">
+                </div>
             <div class="content">
-                  <div class="d-flex justify-content-center align-items-center" style="height:100vh;">
+                  <!-- <div class="d-flex justify-content-center align-items-center" style="height:100vh;"> -->
                         <div class="row">
-                              <div class="col-lg">
+                              <div class="col">
                                     <div class="card">
                                           <div class="card-header">
                                                 <h4 class="card-title"> Result Compilation</h4>
-                                                  <div>
-                                                    <input type="text" name="Enrollment No." id="inputSemester" placeholder="Enter Semester"
-                                                      style="border-color: grey; padding: 4px;">
-                                                    <button class="btn btn-sm btn-rounded btn-icon" id="search_result">
-                                                      <i class="fa fa-search" style="color: aliceblue;"></i>
-                                                    </button>
+                                                <div class="input-group no-border" >
+                                                  <input class="form-control" id="inputSemester" type="text" placeholder="Enter Election ID" value="">
+                                                  <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary btn-round btn-icon" id="search_result">
+                                                            <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                                        </button>
                                                   </div>
-
+                                                </div>
                                           </div>
+                                          <hr>
                                           <div class="card-body">
                                                 <div class="table-responsive">
                                                       <table class="table">

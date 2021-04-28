@@ -144,31 +144,46 @@
                 </div>
             </div>
         </div> -->
-        <div class="container">
-            <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-                <div class="text-center">
-                    <h2>Create a Notification</h2>
-                    <div class="form-control" style="padding:20px;">
-                        <form>
-                            <p class="badge badge-primary">Target is UserID to notify a user else leave blank to
-                                broadcast.</p>
-                            <div class="text-left"><label for="inputUsername"> <b>Target</b></label></div>
-                            <input type="name" class="form-control" id="inputTarget" placeholder="Enter target"
-                                required>
-                            <br>
-                            <div class="text-left"><label for="inputNotifMsg"> <b>Message</b></label></div>
-                            <div>
-                                <textarea id="inputNotifMsg" class="form-control" rows="3" style="margin:10px;"
-                                    placeholder="Enter message to notify..."></textarea>
-                            </div>
-                        </form>
-                        <button onClick="addNotification()" type="submit" class="btn btn-primary">Create
-                            Notification</button>
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
 
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+
+            <!-- <div class="d-flex justify-content-center align-items-center" style="height: 100vh;"> -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Create a Notification</h2>
                     </div>
+                    <div class="card-body text-center">
+                        <div class="form-control" style="padding:20px;">
+                            <form>
+                                <p class="badge badge-primary">Target is UserID to notify a user else leave blank to
+                                    broadcast.</p>
+                                <div class="text-left"><label for="inputUsername"> <b>Target</b></label></div>
+                                <input type="name" class="form-control" id="inputTarget" placeholder="Enter target"
+                                    required>
+                                <br>
+                                <div class="text-left"><label for="inputNotifMsg"> <b>Message</b></label></div>
+                                <div>
+                                    <textarea id="inputNotifMsg" class="form-control" rows="3" style="margin:10px;"
+                                        placeholder="Enter message to notify..."></textarea>
+                                </div>
+                            </form>
+                            <button onClick="addNotification()" type="submit" class="btn btn-primary">Create
+                                Notification</button>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+    </div>
+</div>
+</div>
         <script src="../script/detailUpdater.js"></script>
         <script src="../script/priviledged.add_notification.js"></script>
         <script src="../assets/js/core/jquery.min.js"></script>

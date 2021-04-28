@@ -104,196 +104,206 @@
                 </ul>
             </div>
         </div>
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
 
-        <center>
-            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
-                <div class=" card-header">
-                    <h3>Masters / Branches
-                    </h3>
-                </div>
-                <div class="card-body "
-                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
-                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
-                        <i class=" fa fa-plus"></i>
-                        Create
-                    </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
-                        <i class="fa fa-list"></i>
-                        List
-                    </button>
-                    <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
-                        <i class="fa fa-edit"></i>
-                        Update
-                    </button>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+                        <center>
+                            <div class="card">
+                                <div class=" card-header">
+                                    <h3>Masters / Branches
+                                    </h3>
+                                </div>
+                                <div class="card-body "
+                                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
+                                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
+                                        <i class=" fa fa-plus"></i>
+                                        Create
+                                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
+                                        <i class="fa fa-list"></i>
+                                        List
+                                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
+                                        <i class="fa fa-edit"></i>
+                                        Update
+                                    </button>
 
-                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
-                        <i class=" fa fa-trash"></i>
-                        Delete
-                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
+                                        <i class=" fa fa-trash"></i>
+                                        Delete
+                                    </button>
 
-                    <hr>
+                                    <hr>
 
-                    <div id="Create" class="tabcontent">
-                        <div class="form-control" style="padding:20px;">
-                            <form>
-                                <div class="text-left"><label for="createBranchID"> <b>Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="createBranchID"
-                                    placeholder="Enter Branch ID" required>
-                                <br>
-                                <div class="text-left"><label for="createBranchName"> <b>Branch Name</b></label></div>
-                                <input type="name" class="form-control" id="createBranchName"
-                                    placeholder="Enter Branch Name" required>
-                                <br>
-                                <div class="text-left"><label for="createProgramID"> <b>Linked Program ID</b></label></div>
-                                <input type="name" class="form-control" id="createProgramID"
-                                    placeholder="Linked Program ID" required>
-                            </form>
-                            <button onClick="addBranch()" type="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                                    <div id="Create" class="tabcontent">
+                                        <div class="form-control" style="padding:20px;">
+                                            <form>
+                                                <div class="text-left"><label for="createBranchID"> <b>Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="createBranchID"
+                                                    placeholder="Enter Branch ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="createBranchName"> <b>Branch Name</b></label></div>
+                                                <input type="name" class="form-control" id="createBranchName"
+                                                    placeholder="Enter Branch Name" required>
+                                                <br>
+                                                <div class="text-left"><label for="createProgramID"> <b>Linked Program ID</b></label></div>
+                                                <input type="name" class="form-control" id="createProgramID"
+                                                    placeholder="Linked Program ID" required>
+                                            </form>
+                                            <button onClick="addBranch()" type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="List" class="tabcontent">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+
+                                                <!-- name, username, role, sn -->
+                                                <th>
+                                                    #
+                                                </th>
+                                                <th>
+                                                    BranchID
+                                                </th>
+                                                <th>
+                                                    Branch Name
+                                                </th>
+                                                <th>
+                                                    ProgramID
+                                                </th>
+                                            </thead>
+                                            <tbody id="listBranches">
+                                                <tr>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        IT
+                                                    </td>
+                                                    <td>
+                                                        Information Technology
+                                                    </td>
+                                                    <td>
+                                                        BTECH
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        ITBI
+                                                    </td>
+                                                    <td>
+                                                        Info. Tech. with Business Informatics
+                                                    </td>
+                                                    <td>
+                                                        BTECH
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        ECE
+                                                    </td>
+                                                    <td>
+                                                        Electronics and Communication Eng.
+                                                    </td>
+                                                    <td>
+                                                        BTECH
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        OPR
+                                                    </td>
+                                                    <td>
+                                                        Operational
+                                                    </td>
+                                                    <td>
+                                                        MBA
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        FIN
+                                                    </td>
+                                                    <td>
+                                                        Financial Basket
+                                                    </td>
+                                                    <td>
+                                                        MBA
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div id="Update" class="tabcontent">
+                                        <span class="badge badge-default">
+                                            Only Branch name can be updated. ID can not be changed.
+                                            <br>
+                                            Try deleting branch, in case you want to change ID.
+                                        </span>
+                                        <br>
+                                        <div class="form-control" style="padding:20px;">
+
+                                            <form>
+                                                <div class="text-left"><label for="upBranchID"> <b>Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="upBranchID"
+                                                    placeholder="Enter Branch ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="upProgramID"> <b>Linked Program ID</b></label></div>
+                                                <input type="name" class="form-control" id="upProgramID"
+                                                    placeholder="Linked Program ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="upBranchName"> <b>Branch Name</b></label></div>
+                                                <input type="name" class="form-control" id="upBranchName"
+                                                    placeholder="Enter Branch Name" required>
+
+                                            </form>
+                                            <button onClick="updateBranch()" type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="Delete" class="tabcontent">
+                                        <div class="form-control" style="padding:20px;">
+                                            <form>
+                                                <div class="text-left"><label for="delBranchID"> <b>Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="delBranchID"
+                                                    placeholder="Enter Branch ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="delProgramID"> <b>Linked Program ID</b></label></div>
+                                                <input type="name" class="form-control" id="delProgramID"
+                                                    placeholder="Linked Program ID" required>
+                                                <br>
+                                            </form>
+                                            <button onClick="deleteBranch()" type="submit" class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </center>
                     </div>
-
-                    <div id="List" class="tabcontent">
-                        <table class="table">
-                            <thead class=" text-primary">
-
-                                <!-- name, username, role, sn -->
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    BranchID
-                                </th>
-                                <th>
-                                    Branch Name
-                                </th>
-                                <th>
-                                    ProgramID
-                                </th>
-                            </thead>
-                            <tbody id="listBranches">
-                                <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        IT
-                                    </td>
-                                    <td>
-                                        Information Technology
-                                    </td>
-                                    <td>
-                                        BTECH
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        ITBI
-                                    </td>
-                                    <td>
-                                        Info. Tech. with Business Informatics
-                                    </td>
-                                    <td>
-                                        BTECH
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                        ECE
-                                    </td>
-                                    <td>
-                                        Electronics and Communication Eng.
-                                    </td>
-                                    <td>
-                                        BTECH
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        OPR
-                                    </td>
-                                    <td>
-                                        Operational
-                                    </td>
-                                    <td>
-                                        MBA
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        5
-                                    </td>
-                                    <td>
-                                        FIN
-                                    </td>
-                                    <td>
-                                        Financial Basket
-                                    </td>
-                                    <td>
-                                        MBA
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="Update" class="tabcontent">
-                        <span class="badge badge-default">
-                            Only Branch name can be updated. ID can not be changed.
-                            <br>
-                            Try deleting branch, in case you want to change ID.
-                        </span>
-                        <br>
-                        <div class="form-control" style="padding:20px;">
-
-                            <form>
-                                <div class="text-left"><label for="upBranchID"> <b>Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="upBranchID"
-                                    placeholder="Enter Branch ID" required>
-                                <br>
-                                <div class="text-left"><label for="upProgramID"> <b>Linked Program ID</b></label></div>
-                                <input type="name" class="form-control" id="upProgramID"
-                                    placeholder="Linked Program ID" required>
-                                <br>
-                                <div class="text-left"><label for="upBranchName"> <b>Branch Name</b></label></div>
-                                <input type="name" class="form-control" id="upBranchName"
-                                    placeholder="Enter Branch Name" required>
-
-                            </form>
-                            <button onClick="updateBranch()" type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div>
-
-                    <div id="Delete" class="tabcontent">
-                        <div class="form-control" style="padding:20px;">
-                            <form>
-                                <div class="text-left"><label for="delBranchID"> <b>Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="delBranchID"
-                                    placeholder="Enter Branch ID" required>
-                                <br>
-                                <div class="text-left"><label for="delProgramID"> <b>Linked Program ID</b></label></div>
-                                <input type="name" class="form-control" id="delProgramID"
-                                    placeholder="Linked Program ID" required>
-                                <br>
-                            </form>
-                            <button onClick="deleteBranch()" type="submit" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-
-        </center>
-
+        </div>
+    </div>
 
 
 

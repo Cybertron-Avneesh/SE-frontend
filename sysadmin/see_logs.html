@@ -20,7 +20,7 @@
     <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./../assets/demo/demo.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/tablestyle.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tablestyle.css"> -->
 </head>
 
 <body onload="getLogs()">
@@ -79,119 +79,122 @@
                 </ul>
             </div>
         </div>
-        <div class="content">
-            <div class="d-flex justify-content-center align-items-center" >
-                <div class="row">
-                    <div class="col-lg">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title"> Logs</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class=" text-primary">
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm"></div>
+            <div class="content">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title"> Logs</h4>
+                                </div>
+                                <hr>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class=" text-primary">
 
-                                            <!-- name, username, role, sn -->
-                                            <th>
-                                                S.no.
-                                            </th>
-                                            <th>
-                                                UserID
-                                            </th>
-                                            <th>
-                                                Time Stamp
-                                            </th>
-                                            <th>
-                                                Action Performed
-                                            </th>
+                                                <!-- name, username, role, sn -->
+                                                <th>
+                                                    S.no.
+                                                </th>
+                                                <th>
+                                                    UserID
+                                                </th>
+                                                <th>
+                                                    Time Stamp
+                                                </th>
+                                                <th>
+                                                    Action Performed
+                                                </th>
 
-                                        </thead>
-                                        <tbody id="logsTable">
-                                            <!-- <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>
-                                                    IIB2019055
-                                                </td>
-                                                <td>
-                                                    2021/03/10 19:19:00
-                                                </td>
-                                                <td>
-                                                    Enrolled Student
-                                                </td>
+                                            </thead>
+                                            <tbody id="logsTable">
+                                                <!-- <tr>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        IIB2019055
+                                                    </td>
+                                                    <td>
+                                                        2021/03/10 19:19:00
+                                                    </td>
+                                                    <td>
+                                                        Enrolled Student
+                                                    </td>
 
 
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>
-                                                    IIB2019050
-                                                </td>
-                                                <td>
-                                                    2021/03/09 16:19:00
-                                                </td>
-                                                <td>
-                                                    User list view
-                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        IIB2019050
+                                                    </td>
+                                                    <td>
+                                                        2021/03/09 16:19:00
+                                                    </td>
+                                                    <td>
+                                                        User list view
+                                                    </td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td>
-                                                    IIB2019052
-                                                </td>
-                                                <td>
-                                                    2021/03/10 19:34:00
-                                                </td>
-                                                <td>
-                                                    Created a Operating User
-                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        IIB2019052
+                                                    </td>
+                                                    <td>
+                                                        2021/03/10 19:34:00
+                                                    </td>
+                                                    <td>
+                                                        Created a Operating User
+                                                    </td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    4
-                                                </td>
-                                                <td>
-                                                    IIB2019053
-                                                </td>
-                                                <td>
-                                                    2021/03/10 10:34:00
-                                                </td>
-                                                <td>
-                                                    Revoked Permission
-                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        IIB2019053
+                                                    </td>
+                                                    <td>
+                                                        2021/03/10 10:34:00
+                                                    </td>
+                                                    <td>
+                                                        Revoked Permission
+                                                    </td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    5
-                                                </td>
-                                                <td>
-                                                    IIB2019060
-                                                </td>
-                                                <td>
-                                                    2021/03/10 17:19:00
-                                                </td>
-                                                <td>
-                                                    Removed Operating User IIB2019065
-                                                </td>
-                                            </tr> -->
-                                        </tbody>
-                                    </table>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        IIB2019060
+                                                    </td>
+                                                    <td>
+                                                        2021/03/10 17:19:00
+                                                    </td>
+                                                    <td>
+                                                        Removed Operating User IIB2019065
+                                                    </td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
         <script src="../script/detailUpdater.js"></script>
         <script src="../script/sysadmin.getLogs.js"></script>
 </body>

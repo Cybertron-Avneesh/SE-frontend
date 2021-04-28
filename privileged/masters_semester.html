@@ -104,179 +104,189 @@
                 </ul>
             </div>
         </div>
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
 
-        <center>
-            <div class="card col-md-7 col-sm-12" style="margin-top: 20px; padding: 20px;">
-                <div class=" card-header">
-                    <h3>Masters / Semester
-                    </h3>
-                </div>
-                <div class="card-body "
-                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
-                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
-                        <i class=" fa fa-plus"></i>
-                        Create
-                    </button>
-                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
-                        <i class="fa fa-list"></i>
-                        List
-                    </button>
-                    <!-- <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
-                        <i class="fa fa-edit"></i>
-                        Update
-                    </button> -->
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+                        <center>
+                            <div class="card">
+                                <div class=" card-header">
+                                    <h3>Masters / Semester
+                                    </h3>
+                                </div>
+                                <div class="card-body "
+                                    style="padding-left: 20px; padding-right: 20px; padding-top: 0px; padding-bottom: 0px;">
+                                    <button class="btn btn-round tablink" onclick="openPage('Create', this, 'orange')" id="defaultOpen">
+                                        <i class=" fa fa-plus"></i>
+                                        Create
+                                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('List', this, 'green'); getList()">
+                                        <i class="fa fa-list"></i>
+                                        List
+                                    </button>
+                                    <!-- <button class="btn btn-round tablink" onclick="openPage('Update', this, 'blue')">
+                                        <i class="fa fa-edit"></i>
+                                        Update
+                                    </button> -->
 
-                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
-                        <i class=" fa fa-trash"></i>
-                        Delete
-                    </button>
+                                    <button class="btn btn-round tablink" onclick="openPage('Delete', this, 'red')">
+                                        <i class=" fa fa-trash"></i>
+                                        Delete
+                                    </button>
 
-                    <hr>
+                                    <hr>
 
-                    <div id="Create" class="tabcontent">
-                        <div class="form-control" style="padding:20px;">
-                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
-                            <form>
-                                <div class="text-left"><label for="createSemID"> <b>Sem ID</b></label></div>
-                                <input type="name" class="form-control" id="createSemID"
-                                    placeholder="Enter Semester ID" required>
-                                <br>
-                                <div class="text-left"><label for="createSumNum"> <b>Sem Num</b></label></div>
-                                <input type="name" class="form-control" id="createSumNum"
-                                    placeholder="Enter Semester Number" required>
-                                <br>
-                                <div class="text-left"><label for="createBranchID"> <b>Linked Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="createBranchID"
-                                    placeholder="Linked Branch ID" required>
-                            </form>
-                            <button onClick="addSemester()" type="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                                    <div id="Create" class="tabcontent">
+                                        <div class="form-control" style="padding:20px;">
+                                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
+                                            <form>
+                                                <div class="text-left"><label for="createSemID"> <b>Sem ID</b></label></div>
+                                                <input type="name" class="form-control" id="createSemID"
+                                                    placeholder="Enter Semester ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="createSumNum"> <b>Sem Num</b></label></div>
+                                                <input type="name" class="form-control" id="createSumNum"
+                                                    placeholder="Enter Semester Number" required>
+                                                <br>
+                                                <div class="text-left"><label for="createBranchID"> <b>Linked Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="createBranchID"
+                                                    placeholder="Linked Branch ID" required>
+                                            </form>
+                                            <button onClick="addSemester()" type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="List" class="tabcontent">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+
+                                                <!-- name, username, role, sn -->
+                                                <th>
+                                                    #
+                                                </th>
+                                                <th>
+                                                    SemID
+                                                </th>
+                                                <th>
+                                                    Sem Num
+                                                </th>
+                                                <th>
+                                                    BranchID
+                                                </th>
+                                            </thead>
+                                            <tbody id="listSemesters">
+                                                <tr>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        IT_1
+                                                    </td>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        IT
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        IT_2
+                                                    </td>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        IT
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        3
+                                                    </td>
+                                                    <td>
+                                                        ECE_1
+                                                    </td>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        ECE
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        4
+                                                    </td>
+                                                    <td>
+                                                        ITBI_1
+                                                    </td>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        ITBI
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- <div id="Update" class="tabcontent">
+                                        <span class="badge badge-default">
+                                        </span>
+                                        <br>
+                                        <div class="form-control" style="padding:20px;">
+
+                                            <form>
+                                                <div class="text-left"><label for="upSemID"> <b>Sem ID</b></label></div>
+                                                <input type="name" class="form-control" id="upSemID"
+                                                    placeholder="Enter Semester ID" required>
+                                                <br>
+                                                <div class="text-left"><label for="upSumNum"> <b>Sem Num</b></label></div>
+                                                <input type="name" class="form-control" id="upSumNum"
+                                                    placeholder="Enter Semester Number" required>
+                                                <br>
+                                                <div class="text-left"><label for="upBranchID"> <b>Linked Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="upBranchID"
+                                                    placeholder="Linked Branch ID" required>
+                                            </form>
+                                            <button onClick="" type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div> -->
+
+                                    <div id="Delete" class="tabcontent">
+                                        <div class="form-control" style="padding:20px;">
+                                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
+                                            <form>
+                                                <div class="text-left"><label for="delSemID"> <b>Sem ID</b></label></div>
+                                                <input type="name" class="form-control" id="delSemID"
+                                                    placeholder="Enter Sem ID" required>
+                                                <!-- <br> -->
+                                                <!-- <div class="text-left"><label for="delBranchID"> <b>Linked Branch ID</b></label></div>
+                                                <input type="name" class="form-control" id="delBranchID"
+                                                    placeholder="Linked Branch ID" required> -->
+                                                <br>
+                                            </form>
+                                            <button onClick="deleteSemester()" type="submit" class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </center>
                     </div>
-
-                    <div id="List" class="tabcontent">
-                        <table class="table">
-                            <thead class=" text-primary">
-
-                                <!-- name, username, role, sn -->
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    SemID
-                                </th>
-                                <th>
-                                    Sem Num
-                                </th>
-                                <th>
-                                    BranchID
-                                </th>
-                            </thead>
-                            <tbody id="listSemesters">
-                                <tr>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        IT_1
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        IT
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        IT_2
-                                    </td>
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        IT
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                        ECE_1
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        ECE
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        4
-                                    </td>
-                                    <td>
-                                        ITBI_1
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        ITBI
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- <div id="Update" class="tabcontent">
-                        <span class="badge badge-default">
-                        </span>
-                        <br>
-                        <div class="form-control" style="padding:20px;">
-
-                            <form>
-                                <div class="text-left"><label for="upSemID"> <b>Sem ID</b></label></div>
-                                <input type="name" class="form-control" id="upSemID"
-                                    placeholder="Enter Semester ID" required>
-                                <br>
-                                <div class="text-left"><label for="upSumNum"> <b>Sem Num</b></label></div>
-                                <input type="name" class="form-control" id="upSumNum"
-                                    placeholder="Enter Semester Number" required>
-                                <br>
-                                <div class="text-left"><label for="upBranchID"> <b>Linked Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="upBranchID"
-                                    placeholder="Linked Branch ID" required>
-                            </form>
-                            <button onClick="" type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div> -->
-
-                    <div id="Delete" class="tabcontent">
-                        <div class="form-control" style="padding:20px;">
-                            <span class="badge badge-blue">SemID : 'SemNum_BranchID'</span>
-                            <form>
-                                <div class="text-left"><label for="delSemID"> <b>Sem ID</b></label></div>
-                                <input type="name" class="form-control" id="delSemID"
-                                    placeholder="Enter Sem ID" required>
-                                <!-- <br> -->
-                                <!-- <div class="text-left"><label for="delBranchID"> <b>Linked Branch ID</b></label></div>
-                                <input type="name" class="form-control" id="delBranchID"
-                                    placeholder="Linked Branch ID" required> -->
-                                <br>
-                            </form>
-                            <button onClick="deleteSemester()" type="submit" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-
-        </center>
-
+        </div>
+    </div>
 
 
 

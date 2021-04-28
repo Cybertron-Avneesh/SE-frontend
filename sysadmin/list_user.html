@@ -20,7 +20,7 @@
       <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
       <!-- CSS Just for demo purpose, don't include it in your project -->
       <link href="./../assets/demo/demo.css" rel="stylesheet" />
-      <link rel="stylesheet" href="../assets/css/tablestyle.css">
+      <!-- <link rel="stylesheet" href="../assets/css/tablestyle.css"> -->
 </head>
 
 <body onload="listOfUser()">
@@ -79,114 +79,118 @@
                         </ul>
                   </div>
             </div>
-            <div class="content">
-                  <div class="d-flex justify-content-center align-items-center"style="height:100vh;">
-                        <div class="row">
-                              <div class="col-lg">
-                                    <div class="card">
-                                          <div class="card-header">
-                                                <h4 class="card-title"> Users</h4>
-                                          </div>
-                                          <div class="card-body">
-                                                <div class="table-responsive">
-                                                      <table class="table">
-                                                            <thead class=" text-primary">
+            <div class="main-panel" id="main-panel">
+                <div class="panel-header panel-header-sm">
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                              <div class="card-header">
+                                    <h4 class="card-title"> Users</h4>
+                              </div>
+                              <hr>
+                              <div class="card-body">
+                                    <div class="table-responsive">
+                                          <table class="table">
+                                                <thead class=" text-primary">
 
-                                                                  <!-- name, username, role, sn -->
-                                                                  <th>
-                                                                        S.no.
-                                                                  </th>
-                                                                  <th>
-                                                                        Name
-                                                                  </th>
-                                                                  <th>
-                                                                        UserID
-                                                                  </th>
-                                                                  <th>
-                                                                        Role
-                                                                  </th>
-                                                            </thead>
-                                                            <tbody id="listUser">
-                                                                  <!-- <tr>
-                                                                        <td>
-                                                                              1
-                                                                        </td>
-                                                                        <td>
-                                                                              Ramlal
-                                                                        </td>
-                                                                        <td>
-                                                                              IIB2019055
-                                                                        </td>
-                                                                        <td>
-                                                                              Operating User
-                                                                        </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                        <td>
-                                                                              2
-                                                                        </td>
-                                                                        <td>
-                                                                              Rajkumar
-                                                                        </td>
-                                                                        <td>
-                                                                              IIB201950
-                                                                        </td>
-                                                                        <td>
-                                                                              System Admin
-                                                                        </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                        <td>
-                                                                              3
-                                                                        </td>
-                                                                        <td>
-                                                                              Sandy
-                                                                        </td>
-                                                                        <td>
-                                                                              IIB2019052
-                                                                        </td>
-                                                                        <td>
-                                                                              <span class=" alert-success" style="padding: 6px; border-radius: 20px;">Operating User</span>
+                                                      <!-- name, username, role, sn -->
+                                                      <th>
+                                                            S.no.
+                                                      </th>
+                                                      <th>
+                                                            Name
+                                                      </th>
+                                                      <th>
+                                                            UserID
+                                                      </th>
+                                                      <th>
+                                                            Role
+                                                      </th>
+                                                </thead>
+                                                <tbody id="listUser">
+                                                      <!-- <tr>
+                                                            <td>
+                                                                  1
+                                                            </td>
+                                                            <td>
+                                                                  Ramlal
+                                                            </td>
+                                                            <td>
+                                                                  IIB2019055
+                                                            </td>
+                                                            <td>
+                                                                  Operating User
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td>
+                                                                  2
+                                                            </td>
+                                                            <td>
+                                                                  Rajkumar
+                                                            </td>
+                                                            <td>
+                                                                  IIB201950
+                                                            </td>
+                                                            <td>
+                                                                  System Admin
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td>
+                                                                  3
+                                                            </td>
+                                                            <td>
+                                                                  Sandy
+                                                            </td>
+                                                            <td>
+                                                                  IIB2019052
+                                                            </td>
+                                                            <td>
+                                                                  <span class=" alert-success" style="padding: 6px; border-radius: 20px;">Operating User</span>
 
-                                                                        </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                        <td>
-                                                                              4
-                                                                        </td>
-                                                                        <td>
-                                                                              Susheela
-                                                                        </td>
-                                                                        <td>
-                                                                              IIB2019053
-                                                                        </td>
-                                                                        <td>
-                                                                              Previledged User
-                                                                        </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                        <td>
-                                                                              5
-                                                                        </td>
-                                                                        <td>
-                                                                              Pogo Seth
-                                                                        </td>
-                                                                        <td>
-                                                                              IIB201990
-                                                                        </td>
-                                                                        <td>
-                                                                              System Admin
-                                                                        </td>
-                                                                  </tr> -->
-                                                            </tbody>
-                                                      </table>
-                                                </div>
-                                          </div>
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td>
+                                                                  4
+                                                            </td>
+                                                            <td>
+                                                                  Susheela
+                                                            </td>
+                                                            <td>
+                                                                  IIB2019053
+                                                            </td>
+                                                            <td>
+                                                                  Previledged User
+                                                            </td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td>
+                                                                  5
+                                                            </td>
+                                                            <td>
+                                                                  Pogo Seth
+                                                            </td>
+                                                            <td>
+                                                                  IIB201990
+                                                            </td>
+                                                            <td>
+                                                                  System Admin
+                                                            </td>
+                                                      </tr> -->
+                                                </tbody>
+                                          </table>
                                     </div>
                               </div>
                         </div>
                   </div>
+                </div>
             </div>
+        </div>
+    </div>
             <script src="../script/detailUpdater.js"></script>
             <script src="../script/sysadmin.list_user.js"></script>
 </body>
