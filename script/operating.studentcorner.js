@@ -43,17 +43,39 @@ async function searchStudent() {
                             </h3>
                         </div>
                         <div class="card-body">
-                            <p><strong>Name : </strong>${response['name']}</p>
-                            <p><strong>DOB : </strong>${response['dob']}</p>
-                            <p><strong>Program : </strong>${response['program_id']}</p>
-                            <p><strong>Branch : </strong>${response['branch_id']}</p>
-                            <p><strong>Semester : </strong>${response['current_semester_number']}</p>
-                            <p><strong>Section : </strong>${response['section']}</p>
-                            <p><strong>Credits Comp. : </strong>${response['credits_completed']}</p>
-                            <p><strong>CGPI : </strong>${response['cgpi']}</p>
-                            <p><strong>Mob No. : </strong>${response['phone_number']}</p>
-                            <p><strong>Email : </strong>${response['email_id']}</p>
-                            <p><strong>Address : </strong>${response['address']}</p>
+                            <div class="row">
+                                <div class="col"><strong>Name : </strong> </div> <div class="col"> ${response['name']} </div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><strong>DOB : </strong> </div> <div class="col"> ${response['dob']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><strong>Program : </strong> </div> <div class="col"> ${response['program_id']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Branch : </strong>  </div> <div class="col"> ${response['branch_id']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Semester : </strong>  </div> <div class="col"> ${response['current_semester_number']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Section : </strong>  </div> <div class="col"> ${response['section']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Credits Comp. : </strong>  </div> <div class="col"> ${response['credits_completed']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>CGPI : </strong>  </div> <div class="col"> ${response['cgpi']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Mob No. : </strong>  </div> <div class="col"> ${response['phone_number']}</div </div> <div class="col">>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Email : </strong>  </div> <div class="col"> ${response['email_id']}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p><strong>Address : </strong>  </div> <div class="col"> ${response['address']}</div>
+                            </div>
                         </div>
                         `;
                         var elms = document.querySelectorAll("[class='currEnrollID']");
