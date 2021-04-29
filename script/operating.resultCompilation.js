@@ -18,7 +18,6 @@ async function fetchResults(){
             semester_number:semester
         })
     }
-
     fetch('http://localhost:5440/student/resultCompilation?action=2',options)
     .then((res)=>{
         res.json()
@@ -27,7 +26,7 @@ async function fetchResults(){
             console.log(results);
             var i=1;
             results.forEach(curr => {
-                let html = `<td>${i}</td><td>${curr.enrollment_id}</td><td>${curr.total_credits}</td><td>${curr.gpa}</td>`
+                let html = `<td>${i}</td><td>${curr.enrollment_id}</td><td>${curr.total_credits}</td><td>${curr.gpa}</td><td>${curr.medal}</td>`
                 document.querySelector('#result_table').insertAdjacentHTML('beforeend',html);
             });
             i++;
