@@ -154,13 +154,7 @@
 
             activities.push(act);
             document.forms[0].reset();
-            actName = act.activity_name;
-            if(actName.length == 0){
-                alert("No activity entered");
-            }
-            else{
-                alert("Dates for "+ actName +" has been extended");
-            }
+            window.alert(`Extended, ${act['activity_name']}, till ${act['activity_date']}`);
             console.log('extended', { activities });
         }
     </script>
