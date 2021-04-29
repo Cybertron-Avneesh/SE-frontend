@@ -11,8 +11,8 @@ async function searchStudent() {
     // console.log(data);
     var enrollNo = document.getElementById('inputEnroll').value;
     var cred = {
-        my_id: myID??"TEMPUSER",
-        my_level: myLevel??2,
+        my_id: myID ?? "TEMPUSER",
+        my_level: myLevel ?? 2,
     }
     var options = {
         method: 'POST',
@@ -68,7 +68,7 @@ async function searchStudent() {
                                 <div class="col"><p><strong>CGPI : </strong>  </div> <div class="col"> ${response['cgpi']}</div>
                             </div>
                             <div class="row">
-                                <div class="col"><p><strong>Mob No. : </strong>  </div> <div class="col"> ${response['phone_number']}</div </div> <div class="col">>
+                                <div class="col"><p><strong>Mob No. : </strong>  </div> <div class="col"> ${response['phone_number']}</div>
                             </div>
                             <div class="row">
                                 <div class="col"><p><strong>Email : </strong>  </div> <div class="col"> ${response['email_id']}</div>
@@ -111,7 +111,7 @@ function getVerificationInfo(status) {
 async function markAsVerified() {
     var cred = student;
     cred["is_verified"] = 1;
-    cred["my_id"] = myID??"";
+    cred["my_id"] = myID ?? "";
     cred["my_level"] = myLevel;
     console.log(cred);
 
@@ -133,7 +133,7 @@ async function markAsVerified() {
 
 async function branchChange() {
     var cred = student;
-    cred["my_id"] = myID??"";
+    cred["my_id"] = myID ?? "";
     cred["my_level"] = myLevel;
     cred["branch_id"] = document.getElementById('inputBranch').value;
     console.log(cred);
@@ -157,7 +157,7 @@ async function branchChange() {
 }
 async function sectionChange() {
     var cred = student;
-    cred["my_id"] = myID??"";
+    cred["my_id"] = myID ?? "";
     cred["my_level"] = myLevel;
     cred["section"] = document.getElementById('inputSection').value;
     console.log(cred);
@@ -214,7 +214,7 @@ async function takeDisciplinaryAction() {
     var action = document.getElementById('inputAction').value;
     var date = document.getElementById('inputDate').value;
     var cred = {
-        my_id: myID??"",
+        my_id: myID ?? "",
         my_level: myLevel,
         enrollment_id: enrollNo,
         reason: reason,
@@ -260,7 +260,7 @@ function getPaidStatus(status) {
 async function getFeeStatus() {
 
     var cred = {
-        my_id: myID??"",
+        my_id: myID ?? "",
         my_level: myLevel,
         enrollment_id: student['enrollment_id'],
     }
@@ -302,6 +302,68 @@ async function getFeeStatus() {
                             `
                         )
                     });
+                    // notifList.insertAdjacentHTML('beforeend', li);
+
+                })
+                .catch(err => {
+                    console.log(err);
+                    document.getElementById("feeStatusTable").innerHTML = `
+                    <p class=" alert-danger" align="center" style="padding: 20px; font-size: 12px;">
+                        Error loading fee status.
+                    </p>
+                `;
+                })
+
+
+        })
+        .catch(err => console.error(err))
+}
+async function getGradeCard() {
+
+    var cred = {
+        my_id: myID ?? "",
+        my_level: myLevel,
+        enrollment_id: student['enrollment_id'],
+    }
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cred)
+    }
+    await fetch(`http://localhost:5440/student/assessment`, options)
+        .then(res => {
+            res.json()
+                .then(data => {
+                    console.log(data)
+                    response = data;
+                    console.log(response);
+                    // appending them to the list
+                    var gradesTable = document.getElementById('gradesTable');
+                    gradesTable.innerHTML = "";
+                    var cnt = 0;
+                    // data['Fees'].forEach(element => {
+                    //     cnt++;
+                    //     feeStatusTable.insertAdjacentHTML('beforeend',
+                    //         `
+                    //         <tr>
+                    //             <td>
+                    //                ${cnt}
+                    //             </td>
+                    //             <td>
+                    //                 ${element['semester_number']}
+                    //             </td>
+                    //             <td>
+                    //                 ${element['payment_date']}
+                    //             </td>
+                    //             <td>
+                    //                   ${getPaidStatus(element['fee_status'])}
+                    //             </td>
+                    //         </tr>
+                    //         `
+                    //     )
+                    // });
                     // notifList.insertAdjacentHTML('beforeend', li);
 
                 })
