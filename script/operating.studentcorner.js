@@ -332,7 +332,7 @@ async function getGradeCard() {
         },
         body: JSON.stringify(cred)
     }
-    await fetch(`http://localhost:5440/student/assessment`, options)
+    await fetch(`http://localhost:5440/student/assessment?action=2`, options)
         .then(res => {
             res.json()
                 .then(data => {
@@ -343,27 +343,30 @@ async function getGradeCard() {
                     var gradesTable = document.getElementById('gradesTable');
                     gradesTable.innerHTML = "";
                     var cnt = 0;
-                    // data['Fees'].forEach(element => {
-                    //     cnt++;
-                    //     feeStatusTable.insertAdjacentHTML('beforeend',
-                    //         `
-                    //         <tr>
-                    //             <td>
-                    //                ${cnt}
-                    //             </td>
-                    //             <td>
-                    //                 ${element['semester_number']}
-                    //             </td>
-                    //             <td>
-                    //                 ${element['payment_date']}
-                    //             </td>
-                    //             <td>
-                    //                   ${getPaidStatus(element['fee_status'])}
-                    //             </td>
-                    //         </tr>
-                    //         `
-                    //     )
-                    // });
+                    data['assessment'].forEach(element => {
+                        cnt++;
+                        gradesTable.insertAdjacentHTML('beforeend',
+                            `
+                            <tr>
+                              <td>
+                                ${element['semester_number']}
+                              </td>
+                              <td>
+                                ${element['course_id']}
+                              </td>
+                              <td>
+                              ${element['c1']}
+                              </td>
+                              <td>
+                              ${element['c2']}
+                              </td>
+                              <td>
+                              ${element['c3']}
+                              </td>
+                            </tr>
+                            `
+                        )
+                    });
                     // notifList.insertAdjacentHTML('beforeend', li);
 
                 })

@@ -31,7 +31,7 @@ async function addAssessment(){
         })
     }
 
-    fetch('http://localhost:5440/student/assessment',options)
+    fetch('http://localhost:5440/student/assessment?action=1',options)
     .then((res)=>{
         console.log("successfully");
     })
