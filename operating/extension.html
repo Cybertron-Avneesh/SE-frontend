@@ -154,7 +154,13 @@
 
             activities.push(act);
             document.forms[0].reset();
-
+            actName = act.activity_name;
+            if(actName.length == 0){
+                alert("No activity entered");
+            }
+            else{
+                alert("Dates for "+ actName +" has been extended");
+            }
             console.log('extended', { activities });
         }
     </script>
