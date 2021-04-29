@@ -349,11 +349,40 @@
               <i class="fa fa-user-circle"></i>
               <span class="currEnrollID"></span>
             </h3>
-            <div>
-              <input type="file" value="" class="form-control btn-primary" style="margin:10px;" placeholder="Upload">
-              <button class="btn btn-success">Upload</button>
+            <div class="card">
+              <div class="card-header">
+                  <h5 class="card-title">
+                      Grade Info
+                  </h5>
+              </div>
+              <div class="card-body">
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead class="text-primary">
+                              <th>
+                                  Semester
+                              </th>
+                              <th>
+                                  Course ID
+                              </th>
+                              <th>
+                                  C1
+                              </th>
+                              <th>
+                                  C2
+                              </th>
+                              <th>
+                                  C3
+                              </th>
+                          </thead>
+                          <tbody id="gradeList">
+
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
             </div>
-            <button type="button" class="btn btn-info" data-dismiss="modal" onclick="printDiv('detailCard')">Download</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal" onclick="printDiv('detailCard')">Download Grade Card</button>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
