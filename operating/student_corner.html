@@ -112,6 +112,12 @@
                 </button>
             </li>
             <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#change-section">
+                  <i class=" fa fa-user-shield"></i>
+                  <span class="d-md-block">Change Section</span>
+                </button>
+            </li>
+            <li class="nav-item">
               <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#generate">
                 <i class="fa fa-receipt"></i>
                 <!-- <span class="d-md-block">Generate Reciept</span> -->
@@ -187,6 +193,30 @@
           </div>
           <div class="modal-footer ">
             <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" onclick="branchChange()">Change</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal fade" id="change-section" role="dialog">
+      <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Section Change</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <h3>
+                <i class="fa fa-user-md"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <input id="inputSection" type="text" value="" class="form-control text-info" style="margin:10px;" placeholder="New Section">
+          </div>
+          <div class="modal-footer ">
+            <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" onclick="sectionChange()">Change</button>
             <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
           </div>
         </div>

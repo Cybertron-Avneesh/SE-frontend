@@ -125,7 +125,7 @@ async function markAsVerified() {
     await fetch(`http://localhost:5440/student/create/${cred['enrollment_id']}?action=3`, options)
         .then(res => {
             if (res.status === 200) {
-                window.alert(`Student ${enrollNo} detail updated sucessfully!`);
+                window.alert(`Student ${cred['enrollment_id']} detail updated sucessfully!`);
             }
         })
         .catch(err => console.error(err))
@@ -148,7 +148,31 @@ async function branchChange() {
     await fetch(`http://localhost:5440/student/create/${cred['enrollment_id']}?action=3`, options)
         .then(res => {
             if (res.status === 200) {
-                window.alert(`Student ${enrollNo} Branch updated sucessfully!`);
+                window.alert(`Student ${cred['enrollment_id']} Branch updated sucessfully!`);
+            } else {
+
+            }
+        })
+        .catch(err => console.error(err))
+}
+async function sectionChange() {
+    var cred = student;
+    cred["my_id"] = myID??"";
+    cred["my_level"] = myLevel;
+    cred["section"] = document.getElementById('inputSection').value;
+    console.log(cred);
+
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cred)
+    }
+    await fetch(`http://localhost:5440/student/create/${cred['enrollment_id']}?action=3`, options)
+        .then(res => {
+            if (res.status === 200) {
+                window.alert(`Student ${cred['enrollment_id']} Section updated sucessfully!`);
             } else {
 
             }
