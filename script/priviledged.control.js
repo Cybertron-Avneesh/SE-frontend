@@ -1,4 +1,5 @@
 document.querySelector('#assessment').addEventListener('click',addAssessment)
+document.querySelector('#addResult').addEventListener('click',addResult)
 document.querySelector('#award').addEventListener('click',award)
 document.querySelector('#alumni').addEventListener('click',archive)
 
@@ -33,6 +34,8 @@ async function addAssessment(){
 
     fetch('http://localhost:5440/student/assessment?action=1',options)
     .then((res)=>{
+        // console.log(res)
+        window.alert(`Assessment for ${enrollment_id} added successfully!`);
         console.log("successfully");
     })
     .catch((err)=>{
@@ -100,4 +103,39 @@ async function archive(){
     })
 }
 
+
+async function addResult(){
+    let enrollment_id = document.querySelector('#resultEnrollID').value;
+    let semester_number = document.querySelector('#resultSemesterNum').value;
+    let total_credits = document.querySelector('#resultCredits').value;
+    let sgpi = document.querySelector('#resultGPA').value;
+    let medal = document.querySelector('#resultMedal').value;
+
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            my_id:myID,
+            my_level:myLevel,
+            enrollment_id:enrollment_id,
+            semester_number:semester_number,
+            total_credits:total_credits,
+            sgpi: sgpi,
+            medal: medal
+        })
+    }
+
+    fetch('http://localhost:5440/student/resultCompilation?action=1',options)
+    .then((res)=>{
+        console.log(res)
+        window.alert(`Result for ${enrollment_id} added successfully!`)
+        console.log("successfully");
+    })
+    .catch((err)=>{
+        console.log(`${err}`);
+    })
+
+}
 
