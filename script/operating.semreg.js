@@ -17,7 +17,7 @@ async function search_program() {
         },
         body: JSON.stringify(cred)
     }
-    await fetch(`http://localhost:5440/student/create?action=2`, options)
+    await fetch(`http://localhost:5440/student/create/?action=2`, options)
         .then(res => {
             res.json()
                 .then(data => {
@@ -27,7 +27,7 @@ async function search_program() {
                     var regTable = document.getElementById('sem_reg_table');
                     regTable.innerHTML = "";
                     var cnt = 0;
-                    data[''].forEach(element => {
+                    data['student'].forEach(element => {
                         cnt++;
                         regTable.insertAdjacentHTML('beforeend',
                             `
@@ -42,10 +42,10 @@ async function search_program() {
                                         ${element['name']}
                                   </td>
                                   <td>
-                                        ${element['DOB']}
+                                        ${element['dob']}
                                   </td>
                                   <td>
-                                        ${element['Semester']}
+                                        ${element['current_semester_number']}
                                   </td>
                             </tr>
                             `
