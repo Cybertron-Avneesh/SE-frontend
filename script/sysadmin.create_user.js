@@ -2,7 +2,7 @@ let users = [];
 
 currUserObj = JSON.parse(window.localStorage.getItem("currUserObj"));
 myID = currUserObj["user_id"];
-myLevel = currUserObj["admin_level"]; 
+myLevel = currUserObj["admin_level"];
 
 function addUsers() {
 
@@ -14,7 +14,7 @@ function addUsers() {
         admin_level: roleReturningFun(document.querySelectorAll('input[name="role"]')),
         my_id: myID??"TEMPUSER",
         my_level: myLevel??2,
-        name: currUserObj["name"]
+        name: document.getElementsById('inputName').value
     }
     var options = {
         method: 'POST',
