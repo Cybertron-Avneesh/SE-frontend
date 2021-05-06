@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (async function () {
+            let options = {
+                headers :{
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            }
+            let response = await fetch('http://localhost:5440',options);
+            if(response.status === 200) console.log('verified') 
+            else window.location.replace('../login.html');       
+        })();
+    </script>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./../assets/img/apple-icon.png">
+    <!-- <link rel="icon" type="image/png" href="./assets/img/favicon.png"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        AMSAAA
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link href="./../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="./../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+
+            <div class="logo">
+                <div class="simple-text logo">
+                    <center>
+                        <a href="../privileged/index.html">
+                            <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+                        </a>
+                    </center>
+                </div>
+                <a class="simple-text logo-normal text-center" id="currUserInfo">
+                    <span id="currUserName">Shyam tayal</span>
+                    <br>
+                    <span id="currUserLevel">Privileged User</span>
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="./grant_revoke_permission.html">
+                            <i class="fa fa-theater-masks"></i>
+                            <p>Grant/Revoke Permission</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./masters_program.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Programs</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./masters_branches.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Branches</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./masters_courses.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Masters / Courses</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./semester_initiation.html">
+                            <i class="fa fa-id-card"></i>
+                            <p>Semester Initiation</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./control.html">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                            <p>Control</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./update_sem.html">
+                            <i class="fa fa-retweet"></i>
+                            <p>Update Semester</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./add_notification.html">
+                            <i class="fa fa-bell"></i>
+                            <p>Add Notifications</p>
+                        </a>
+                    </li>
+                    <li style="position:fixed; bottom:1em; width:200px;">
+                        <a href="../login.html">
+                            <i class="now-ui-icons sport_user-run"></i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel" id="main-panel">
+            <div class="panel-header panel-header-sm">
+
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+                        <center>
+                            <div class="card">
+                                <div class=" card-header">
+                                    <h3>Update Semester
+                                    </h3>
+                                </div>
+                                <div class="card-body" style="padding:20px;">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="title">Enter Details</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Program ID</label>
+                                                            <input id="upProgID" type="text" class="form-control" placeholder="B.Tech"
+                                                                value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    <center>
+                                                        <button onClick="updateSem()" type="submit"
+                                                            class="btn btn-primary">Update</button>
+                                                    </center>
+                                                    <!-- <div class="col-md-6 pl-1">
+                                                        <div class="form-group">
+                                                            <label>Branch ID</label>
+                                                            <input id="fBranchID" type="text" class="form-control" placeholder="IT"
+                                                                value="">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                                <!-- <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Current Semester</label>
+                                                            <input id="fSemester" type="number" class="form-control" placeholder="1"
+                                                                value="">
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+        <!-- <div class="content">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Program</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <button type="button"
+                                    class="btn btn-block btn-outline-default dropdown-toggle btn-simple no-caret"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Select Program
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" data-value="B.tech">B.Tech</a>
+                                    <a class="dropdown-item" data-value="M.tech">M.Tech</a>
+                                    <a class="dropdown-item" data-value="Ph.D">Ph.D</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Branch</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="dropdown">
+                                <button type="button"
+                                    class="btn btn-block btn-outline-default dropdown-toggle btn-simple no-caret"
+                                    data-toggle="dropdown">
+                                    Select Branch
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" data-value="IT">IT</a>
+                                    <a class="dropdown-item" data-value="IT BI">IT BI</a>
+                                    <a class="dropdown-item" data-value="ECE">ECE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Semester</h4>
+                        </div>
+                        <br>
+                        <div class="card-body">
+                            <input type="number" class="form-control" placeholder="Semester">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <input type="submit" class="btn btn-primary btn-outline-default" name="Filter">
+                    <button class="btn btn-outline-primary btn-md">
+                        <i class="fa fa-filter"></i>
+                        Filter
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-9">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Checkbox
+                                </td>
+                                <td>
+                                    Name
+                                </td>
+                                <td>
+                                    Enrollment Number
+                                </td>
+                                <td>
+                                    Semester
+                                </td>
+                                <td>
+                                    Action
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <span class="form-check-sign"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    Ramlal
+                                </td>
+                                <td>
+                                    iib2019055
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-success">Update</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+        <!-- Table (Checkbox, Name, Enrollment, Semester)-->
+    </div>
+    </div>
+</div>
+</div>
+</div>
+    <!-- End your project here-->
+    <script src="../script/priviledged.update_sem.js"></script>
+    <script src="../script/detailUpdater.js"></script>
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+</body>
+
+</html>

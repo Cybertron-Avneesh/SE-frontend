@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+        (async function () {
+            let options = {
+                headers :{
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            }
+            let response = await fetch('http://localhost:5440',options);
+            if(response.status === 200) console.log('verified') 
+            else window.location.replace('../login.html');       
+        })();
+
+    </script>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./../assets/img/apple-icon.png">
+    <!-- <link rel="icon" type="image/png" href="./assets/img/favicon.png"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        AMSAAA
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- CSS Files -->
+    <link href="./../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="./../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <div class="simple-text logo">
+                    <center>
+                        <a onclick="appendHTML('index_html')">
+                            <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+                        </a>
+                    </center>
+                </div>
+                <a class="simple-text logo-normal text-center" id="currUserInfo">
+                    <span id="currUserName">Shyam tayal</span>
+                    <br>
+                    <span id="currUserLevel">System Admin</span>
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper" >
+                <ul class="nav" >
+                    <li>
+                        <a onclick="appendHTML('create_user')"> 
+                            <i class="now-ui-icons ui-1_simple-add"></i>
+                            <p>Create A User</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="appendHTML('remove_user')">
+                            <i class="now-ui-icons ui-1_simple-delete"></i>
+                            <p>Remove User</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="appendHTML('list_user')">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>List of Users</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="appendHTML('see_logs')">
+                            <i class="now-ui-icons education_agenda-bookmark"></i>
+                            <p>See Logs</p>
+                        </a>
+                    </li>
+                    <li style="position:fixed; bottom:1em; width:200px;">
+                            <a onclick="appendHTML('logout')" href="../login.html">
+                                <i class="now-ui-icons sport_user-run"></i>
+                                <p>Logout</p>
+                            </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-primary navbar-absolute bg-white">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href=""><i class="fa fa-bars"></i></a>
+                </div>
+                <div class="navbar-collapse justify-content-end collapse show" id="navigation">
+                    <button type="button" onclick="getNotification()" class="btn btn-outline-info btn-round" data-toggle="modal"
+                        data-target="#notification">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="notification" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Notifications</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body" id="notifDiv">
+                        <ul id="notifList" style="list-style-type: none;">
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="main-panel" id="main-panel">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+                    <div class="text-center">
+                        <img src="./../imgs/img/welcome.svg" height="400px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="../script/detailUpdater.js"></script>
+        <script src="../script/priviledged.add_notification.js"></script>
+        <script src="../script/admin.appendFunctionality.js"></script>
+        <script type="text/javascript" src="../script/sysadmin.create_user.js"></script>
+        <script src="../script/sysadmin.list_user.js"></script>
+        <script src="../script/sysdmin.remove_user.js"></script>
+        <script src="../script/sysadmin.getLogs.js"></script>
+
+        <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap.min.js"></script>
+        <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+        <script src="../assets/demo/demo.js"></script>
+        <!-- End your project here-->
+</body>
+
+</html>

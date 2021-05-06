@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    (async function () {
+        let options = {
+            headers :{
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }
+        let response = await fetch('http://localhost:5440',options);
+        if(response.status === 200) console.log('verified') 
+        else window.location.replace('../login.html');       
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    AMSAAA
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="./../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="./../assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Start your project here-->
+  <div class="wrapper ">
+    <div class="sidebar" data-color="orange">
+      <div class="logo">
+        <div class="simple-text logo">
+          <center>
+            <a onclick="setCurrent('index')" href="index.html">
+              <img src="./../imgs/img/male_avatar.svg" height="100px" width="100px" />
+            </a>
+
+          </center>
+        </div>
+        <a class="simple-text logo-normal text-center" id="currUserInfo">
+          <span id="currUserName">Shyam tayal</span>
+          <br>
+          <span id="currUserLevel">Operating User</span>
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <ul class="nav">
+            <li>
+                <a href="student_corner.html">
+                    <i class="fa fa-graduation-cap"></i>
+                    <p>Student Corner</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="setCurrent('fee_status')" href="index.html">
+                    <i class="fa fa-credit-card"></i>
+                    <p>Fees Status</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="setCurrent('result_comp')" href="index.html">
+                    <i class="fa fa-file-archive"></i>
+                    <p>Result Compilation</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="setCurrent('admission')" href="index.html">
+                    <i class="fa fa-graduation-cap"></i>
+                    <p>Admission</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="setCurrent('sem_reg')" href="index.html">
+                    <i class="fa fa-list-ul"></i>
+                    <p>Semester Registration</p>
+                </a>
+            </li>
+            <li>
+                <a onclick="setCurrent('extension')" href="index.html">
+                    <i class="fa fa-calendar-day"></i>
+                    <p>Extension of Dates</p>
+                </a>
+            </li>
+            <li >
+                <a onclick="setCurrent('add_notification')" href="index.html">
+                    <i class="fa fa-bell"></i>
+                    <p>Send Notification</p>
+                </a>
+            </li>
+            <li style="position:fixed; bottom:1em; width:200px;">
+                    <a href="../login.html" onclick="appendHTML('logout')">
+                        <i class="now-ui-icons sport_user-run"></i>
+                        <p>Logout</p>
+                    </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+
+
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="">Dashboard</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation-index" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="navbar-collapse justify-content-end collapse show" id="navigation">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#verify">
+                  <i class=" fa fa-user-shield"></i>
+                  <span class="d-md-block">Verify</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#change">
+                  <i class=" fa fa-user-shield"></i>
+                  <span class="d-md-block">Change Branch</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#change-section">
+                  <i class=" fa fa-user-shield"></i>
+                  <span class="d-md-block">Change Section</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#generate">
+                  <i class="fa fa-receipt"></i>
+                  <!-- <span class="d-md-block">Generate Reciept</span> -->
+                  <span class="d-md-block">Print Details</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#remind">
+                  <i class="fa fa-user-clock"></i>
+                  <span class="d-md-block">Remind for Fee</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#duesdetails"
+                  onclick="getFeeStatus()">
+                  <i class="fa fa-bell"></i>
+                  <span class="d-md-block">Due Details</span>
+                </button>
+              </li>
+
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#grade"
+                  onclick="getGradeCard()">
+                  <i class="fa fa-file-alt"></i>
+                  <span class="d-md-block">Grade Card</span>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="nav-link border-0" data-toggle="modal" data-target="#discipline">
+                  <i class="fa fa-user-tag"></i>
+                  <span class="d-md-block">Disciplinary Action</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal fade" id="verify" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Verify</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Do you want to mark current student as verfied?
+              </p>
+            </div>
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" onclick="markAsVerified()">Mark
+                as Verfied</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="change" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Branch Change</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h3>
+                <i class="fa fa-user-md"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <input id="inputBranch" type="text" value="" class="form-control text-info" style="margin:10px;"
+                placeholder="New Branch ID">
+            </div>
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal"
+                onclick="branchChange()">Change</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="change-section" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Section Change</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h3>
+                <i class="fa fa-user-md"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <input id="inputSection" type="text" value="" class="form-control text-info" style="margin:10px;"
+                placeholder="New Section">
+            </div>
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal"
+                onclick="sectionChange()">Change</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="generate" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <h4 class="modal-title">Generate Reciept</h4> -->
+              <h4 class="modal-title">Print Details</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Do you want to print details of current student?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal"
+                onclick="printDiv('detailCard')">Print</button>
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="remind" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Remind for fee</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h3>
+                <i class="fa fa-user-circle"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <div>
+                <textarea id="inputNotifMsg" class="form-control" rows="3" style="margin:10px;"
+                  placeholder="Enter message to notify..."></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="sendFeeNotification()">Send
+                Reminder</button>
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="duesdetails" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Dues Details</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id="feeStatusCard">
+              <!-- <p>No Dues as of now .. </p> -->
+              <h3>
+                <i class="fa fa-user-circle"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+
+              <table class="table">
+                <thead class=" text-primary">
+
+                  <!-- name, username, role, sn -->
+                  <th>
+                    S.no.
+                  </th>
+                  <th>
+                    Semester
+                  </th>
+                  <th>
+                    Date
+                  </th>
+                  <th>
+                    Due details
+                  </th>
+                </thead>
+                <tbody id="feeStatusTable" align="center">
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      2021-01-07
+                    </td>
+                    <td>
+                      Semester 4th Fees Not paid
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      2020-07-05
+                    </td>
+                    <td>
+                      Semester 3rd Fees Not paid
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      2020-01-03
+                    </td>
+                    <td>
+                      Semester 2nd Fees Not Paid
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      4
+                    </td>
+                    <td>
+                      2019-06-22
+                    </td>
+                    <td>
+                      Semester 1st Fees Not paid
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal"
+                onclick="printDiv('feeStatusCard')">Print Receipt</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="grade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Grade Card</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id="completeGradeCard">
+              <h3>
+                <i class="fa fa-user-circle"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">
+                    Grade Info
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="text-primary">
+                        <th>
+                          Semester
+                        </th>
+                        <th>
+                          Course ID
+                        </th>
+                        <th>
+                          C1
+                        </th>
+                        <th>
+                          C2
+                        </th>
+                        <th>
+                          C3
+                        </th>
+                      </thead>
+                      <tbody id="gradesTable">
+                        <tr>
+                          <td>
+                            1
+                          </td>
+                          <td>
+                            SWE
+                          </td>
+                          <td>
+                            29
+                          </td>
+                          <td>
+                            28
+                          </td>
+                          <td>
+                            34
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal"
+                onclick="">Upload</button>
+              <button type="button" class="btn btn-info" data-dismiss="modal"
+                onclick="printDiv('completeGradeCard')">Download Grade Card</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal fade" id="discipline" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Disciplinary Action</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <h3>
+                <i class="fa fa-user-circle"></i>
+                <span class="currEnrollID"></span>
+              </h3>
+              <input id="inputAction" type="text" value="" class="form-control text-info" style="margin:10px;"
+                placeholder="Action Taken">
+              <input id="inputDate" type="date" value="" class="form-control text-info" style="margin:10px;"
+                placeholder="Date of Action">
+              <textarea id="inputReason" class="form-control" rows="3" style="margin:10px;"
+                placeholder="Description/ reason for which action was taken"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-sm" data-dismiss="modal"
+                onclick="takeDisciplinaryAction()">Submit</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <!-- <div class="d-flex justify-content-center align-items-center" style="height:80vh;"> -->
+        <div class="row">
+          <div class="col">
+
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">
+                  Search Student
+                </h4>
+                <div class="input-group no-border">
+                  <input class="form-control" id="inputEnroll" type="text" placeholder="Enter Enrollment ID" value="">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary btn-round btn-icon" onclick="searchStudent()">
+                      <i class="now-ui-icons ui-1_zoom-bold"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="card" id="detailCard">
+
+                </div>
+              </div>
+              <!-- <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fa fa-user-circle"></i>
+                  IIB2019055
+                </h3>
+              </div>
+              <div class="card-body">
+                <p><strong>Name : </strong> Pradhuman</p>
+                <p><strong>Program : </strong> B.Tech.</p>
+                <p><strong>Branch : </strong> IT-BI</p>
+                <p><strong>Semester : </strong> 4</p>
+                <p><strong>Mob No. : </strong> +91-9347238221</p>
+                <p><strong>Email : </strong> prady.don69@gmail.com</p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="../script/detailUpdater.js"></script>
+  <script src="../script/operating.studentcorner.js"></script>
+  <script src="../script/operating.print.js"></script>
+  <script src="../script/operating.appendFunctionality.js"></script>
+
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <script src="../assets/demo/demo.js"></script>
+  <!-- End your project here-->
+</body>
+
+</html>
